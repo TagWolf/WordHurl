@@ -1,4 +1,4 @@
-# Project Title
+# WordHurl
 
 WordHurl is an exciting new, super fun and free, daily web-based word game inspired by games like Wordle, Scrabble, Hangman, and Battleship!
 
@@ -18,8 +18,7 @@ https://wordhurl.com should work in any modern browser on PC, iOS, or Android.
 
 ### How to Play
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* To be written...
 
 ### Where to Play
 
@@ -31,9 +30,6 @@ Contributors names and contact info
 
 David Cahill
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
 ## Version History
 
 * 0.1
@@ -41,4 +37,5 @@ ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 ## License
 
-All code is copyright David Cahill. This game is only licensed for play on https://wordhurl.com.
+All code is copyright David Cahill.
+This game is only licensed for play on https://wordhurl.com.
