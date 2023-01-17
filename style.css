@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+@media(prefers-reduced-motion) {
+    .c.wordtiles, .guesstiles {
+        transition: none;
+    }
+}
+
 body {
-    font-family: "Clear Sans","Helvetica Neue",Arial,sans-serif;
+    font: 400 16px/1.5 "Roboto", sans-serif;
     background-color: #222;
     min-width: 700px;
     overflow-x: none;
@@ -25,8 +31,43 @@ body {
     display: inline-flex;
 }
 
+.wordtile:hover {
+    transform: scale(110%);
+    transition: scale 0.2s ease-in-out;
+}
+
+.wordtile.selected {
+    border: 0.2rem solid #fff;
+    transform: scale(110%);
+    transition: scale 0.2s ease-in-out;
+}
+
 .guesstiles {
     display: inline-flex;
+}
+
+.guesstile:hover {
+    transform: scale(110%);
+    transition: scale 0.2s ease-in-out;
+}
+
+[class="wordtile"]:hover, [class="guesstile"]:hover {
+    border: 0;
+    background-image: linear-gradient(90deg, #fff 50%, transparent 50%), linear-gradient(90deg, #fff 50%, transparent 50%), linear-gradient(0deg, #fff 50%, transparent 50%), linear-gradient(0deg, #fff 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 0.8rem 0.1rem, 0.8rem 0.1rem, 0.1rem 0.8rem, 0.1rem 0.8rem;
+    background-position: left top, right bottom, left bottom, right top;
+    animation: border-dance 1s infinite linear;
+}
+
+@keyframes border-dance {
+    0% {
+        background-position: left top, right bottom, left bottom, right top;
+    }
+
+    100% {
+        background-position: left 15px top, right 15px bottom, left bottom 15px, right top 15px;
+    }
 }
 
 button.hidden {
