@@ -8,27 +8,33 @@
     <title>WordHurl</title>
 </head>
 <body>
-    <div class="playfield">
-        <div class="wordtiles">
-            <button class="wordtile">W</button>
-            <button class="wordtile">O</button>
-            <button class="wordtile">R</button>
-            <button class="wordtile">D</button>
-            <button class="wordtile">H</button>
-            <button class="wordtile">U</button>
-            <button class="wordtile">R</button>
-            <button class="wordtile">L</button>
-        </div>
-        <div class="guesstiles">
-            <button class="guesstile">W</button>
-            <button class="guesstile">O</button>
-            <button class="guesstile">R</button>
-            <button class="guesstile">D</button>
-            <button class="guesstile">H</button>
-            <button class="guesstile">U</button>
-            <button class="guesstile">R</button>
-            <button class="guesstile">L</button>
-        </div>
+    <div class="playfield-container">
+        <div class="playfield-left"></div>
+            <div class="playfield">
+                <div class="label">WORD TILES</div>
+                <div class="wordtiles">
+                    <button class="wordtile hidden">W</button>
+                    <button class="wordtile hidden">O</button>
+                    <button class="wordtile hidden">R</button>
+                    <button class="wordtile hidden">D</button>
+                    <button class="wordtile hidden">H</button>
+                    <button class="wordtile hidden">U</button>
+                    <button class="wordtile hidden">R</button>
+                    <button class="wordtile hidden">L</button>
+                </div>
+                <div class="label">GUESS TILES</div>
+                <div class="guesstiles">
+                    <button class="guesstile hidden">W</button>
+                    <button class="guesstile hidden">O</button>
+                    <button class="guesstile hidden">R</button>
+                    <button class="guesstile hidden">D</button>
+                    <button class="guesstile hidden">H</button>
+                    <button class="guesstile hidden">U</button>
+                    <button class="guesstile hidden">R</button>
+                    <button class="guesstile hidden">L</button>
+                </div>
+            </div>
+        <div class="playfield-right"></div>
     </div>
     <script src="load.js" defer></script>
 </body>
