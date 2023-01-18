@@ -14,7 +14,7 @@ https://wordhurl.com should work in any modern browser on PC, iOS, or Android.
 
 ### Dependencies
 
-* A modern browser with support for JavaScript and CSS such as Chrome, FireFox, Edge, Safari, and more.
+* A modern browser with support for JavaScript and CSS such as Chrome, FireFox, Edge, Safari, or similar.
 
 ### How to Play
 
