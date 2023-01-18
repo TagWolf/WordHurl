@@ -202066,48 +202066,87 @@ const words = [
   "ZYMOSANS",
   "ZYMOTICS",
   "ZYZZYVAS",
-];
+]
 
 // Script to hide/show How To Play
 // TODO: Move to a separate UI / nav script file
-var howToPlayToggle = document.querySelector(".how-to-play-toggle");
-var howToPlayContent = document.querySelector(".how-to-play-content");
+var howToPlayToggle = document.querySelector(".how-to-play-toggle")
+var howToPlayContent = document.querySelector(".how-to-play-content")
 howToPlayToggle.addEventListener("click", function (event) {
   if (howToPlayContent.style.display == "") {
-    howToPlayContent.style.display = "none";
+    howToPlayContent.style.display = "none"
   } else {
-    howToPlayContent.style.display = "";
+    howToPlayContent.style.display = ""
   }
-});
+})
+
+// TODO: Create random seed function
+
+// TODO: Use randomSeed to pick a randomWord from words based on today's date
+
+// TODO: Use randomSeed to scramble randomWord to generate guessTiles
+
+// TODO: Add guessTile button with characters from randomWord
+
+// TODO: Enhance guess function to handle comparing guessTile clicked or typed with today's word
+
+// TODO: Handle scoring on hits / miss
+
+// POSSIBLE TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
+
+// TODO: Add parameters to picking the word (See todo items at top of this script)
 
 // Get random word from dictionary.txt based on today's date
 // Get today's date
-const today = new Date();
-const day = today.getDate();
-const month = today.getMonth() + 1;
-const year = today.getFullYear();
-
+const today = new Date()
+const day = today.getDate()
+const month = today.getMonth() + 1
+const year = today.getFullYear()
 // Get random number based on today's date
-const randomNum = (day * month * year) % 1000;
-
+const randomNum = (day * month * year) % 1000
 // Get random word from words
-const randomWord = words[randomNum]; // This is the random word
+const randomWord = words[randomNum] // This is the random word
+console.log(randomWord)
 
-console.log(randomWord);
+// Scramble characters of randomWord
+function getRandomInt(n) {
+  return Math.floor(Math.random() * n)
+}
+
+function shuffle(s) {
+  var arr = s.split('')           // Convert String to array
+  var n = arr.length              // Length of the array
+  
+  for(var i=0 ; i<n-1 ; ++i) {
+    var j = getRandomInt(n)       // Get random of [0, n-1]
+    
+    var temp = arr[i]             // Swap arr[i] and arr[j]
+    arr[i] = arr[j]
+    arr[j] = temp
+  }
+  
+  s = arr.join('')                // Convert Array to string
+  return s                        // Return shuffled string
+}
+
+var s = randomWord
+console.log(randomNum)
+scrambledWord = shuffle(s)
+console.log(scrambledWord)
 
 // Word tile selection
 wordTiles.forEach((wordTile) => {
   wordTile.addEventListener("click", () => {
     if (wordTile.classList.contains("selected")) {
-      wordTile.classList.remove("selected");
+      wordTile.classList.remove("selected")
     } else {
       wordTiles.forEach((wordTile) => {
-        wordTile.classList.remove("selected");
-      });
-      wordTile.classList.toggle("selected");
+        wordTile.classList.remove("selected")
+      })
+      wordTile.classList.toggle("selected")
     }
-  });
-});
+  })
+})
 
 // If click is not on a wordtile or guess tile then remove the selected class from all word tiles
 document.addEventListener("click", (e) => {
@@ -202116,25 +202155,25 @@ document.addEventListener("click", (e) => {
     !e.target.classList.contains("guesstile")
   ) {
     wordTiles.forEach((wordTile) => {
-      wordTile.classList.remove("selected");
-    });
+      wordTile.classList.remove("selected")
+    })
   }
-});
+})
 
 // Check if clicked guessTile is a match for the selected wordTile
 guessTiles.forEach((guessTile) => {
   guessTile.addEventListener("click", () => {
-    const selectedWordTile = document.querySelector(".wordtile.selected");
+    const selectedWordTile = document.querySelector(".wordtile.selected")
     if (selectedWordTile) {
       if (guessTile.textContent === selectedWordTile.textContent) {
         // TODO: Change to function calls
-        selectedWordTile.classList.add("matched");
-        guessTile.classList.add("matched");
-        selectedWordTile.classList.remove("selected");
+        selectedWordTile.classList.add("matched")
+        guessTile.classList.add("matched")
+        selectedWordTile.classList.remove("selected")
       } else {
-        selectedWordTile.classList.remove("selected");
-        guessTile.classList.add("miss");
+        selectedWordTile.classList.remove("selected")
+        guessTile.classList.add("miss")
       }
     }
-  });
-});
+  })
+})
