@@ -31,6 +31,10 @@ body {
     display: inline-flex;
 }
 
+.wordtile.matched {
+    background-color: #4CAF50;
+}
+
 .wordtile:hover {
     transform: scale(110%);
     transition: scale 0.2s ease-in-out;
@@ -78,8 +82,8 @@ button.hidden {
 button {
     width: 3.5rem;
     height: 3.5rem;
-    background-color: #4CAF50;
     border: none;
+    background-color: #555;
     color: white;
     text-align: center;
     align-items: center;

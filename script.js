@@ -1,5 +1,25 @@
 // Main WordHurl script
 
+// TODO
+//
+// * Update the word tile buttons based on today's word
+// * Fix randomization based on today's date
+// * Create a scrambled set of guess tiles from today's word and based on todays date's seed
+// * Check if selected wordtile matches clicked guesstiles OR typed guesstile letter
+// * Animate hit or miss and store set miss on the guess tile MAPPED to the selected wordtile only
+// * If guesstile is right, indicate that and disable that tile from future selection
+// * If hit / correct, automatically move selection to next wordtile on the right (allows typing solution)
+// * show animation if guesstile is clicked before a wordtile is selected
+// * don't show marquee from guesstiles if wordtile isn't selected
+// * Check if all guesstiles are correct
+// * track score
+// * track history
+// * slide animate history below playfield
+// * Animate win
+// * display score and graphs on win
+// * countdown to next game unlock (see wordle)
+// * reset / new game
+
 const words = [
   "ABIOGENETICALLY",
   "ABORIGINALITIES",
