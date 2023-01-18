@@ -23,6 +23,9 @@
 // * reset / new game
 // * WHEN POSSIBLE, MAKE EVERYTHING A FUNCTION
 // * Also ensure tab switches between wordtiles
+// * Add customization for random word selection (min/max of common letters/word difficulty, min/max # of repeating characters, min/max # of vowels, min/max # of consonants, etc.)
+// * optimize javascript and reduce wordlist size
+// * React?? switch to sqlite for wordlist and archive tracking (see wordhurl-junkfiles for wordhurl.sqlite3 file)
 
 const words = [
   "ABIOGENETICALLY",
