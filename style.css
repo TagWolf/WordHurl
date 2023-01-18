@@ -50,6 +50,11 @@ body {
     display: inline-flex;
 }
 
+.guesstile.matched {
+    background-color: #eee;
+    opacity: 0.5;
+}
+
 .guesstile:hover {
     transform: scale(110%);
     transition: scale 0.2s ease-in-out;
