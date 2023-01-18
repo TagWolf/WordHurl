@@ -202081,6 +202081,8 @@ howToPlayToggle.addEventListener("click", function (event) {
 })
 
 // TODO: Create random seed function
+// Resource: https://github.com/davidbau/seedrandom
+// Resource: https://stackoverflow.com/questions/521295/seeding-the-random-number-generator-in-javascript
 
 // TODO: Use randomSeed to pick a randomWord from words based on today's date
 
