@@ -202067,6 +202067,17 @@ const words = [
   "ZYZZYVAS",
 ];
 
+// Script to hide/show How To Play
+var howToPlayToggle = document.querySelector(".how-to-play-toggle");
+var howToPlayContent = document.querySelector(".how-to-play-content");
+howToPlayToggle.addEventListener("click", function (event) {
+  if (howToPlayContent.style.display == "") {
+    howToPlayContent.style.display = "none";
+  } else {
+    howToPlayContent.style.display = "";
+  }
+});
+
 // Get random word from dictionary.txt based on today's date
 // Get today's date
 const today = new Date();
@@ -202125,4 +202136,3 @@ guessTiles.forEach((guessTile) => {
     }
   });
 });
-

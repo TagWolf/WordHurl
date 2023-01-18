@@ -10,8 +10,55 @@
 body {
   font: 400 16px/1.5 "Roboto", sans-serif;
   background-color: #222;
+  color: #fff;
   min-width: 700px;
   overflow-x: none;
+}
+
+.header {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+  margin-bottom: -2.5rem;
+}
+
+.how-to-play-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  margin: 0;
+}
+
+.how-to-play {
+  color: #fff;
+  text-align: center;
+}
+
+.how-to-play-header {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  font-size: 0.75rem;
+}
+
+.how-to-play-toggle {
+  background-color: #222;
+  font-size: 1.5rem;
+}
+
+.how-to-play-content {
+  position: absolute;
+  display: contents;
+  text-align: center;
+  align-items: center;
+  width: 20rem;
+}
+
+.playfield {
+  text-align: center;
 }
 
 .playfield-container {
@@ -26,6 +73,7 @@ body {
   font-weight: bold;
   text-align: left;
   margin: 1rem 0rem 0rem 0.25rem;
+  margin-left: 3.65rem;
 }
 
 .wordtiles {
@@ -33,13 +81,13 @@ body {
 }
 
 .wordtile.matched {
-    background-color: #4caf50;
-    color: #fff;
+  background-color: #4caf50;
+  color: #fff;
 }
 
 .wordtile {
-    color: #555;
-    margin: 0rem 0.3rem 0rem 0.3rem;
+  color: #555;
+  margin: 0rem 0.3rem 0rem 0.3rem;
 }
 
 .wordtile:hover {
@@ -58,7 +106,7 @@ body {
 }
 
 .guesstile {
-    margin: 0rem 0.3rem 0rem 0.3rem;
+  margin: 0rem 0.3rem 0rem 0.3rem;
 }
 
 .guesstile.matched {

@@ -1,134 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>WordHurl</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="header">
+      <h1>WordHurl</h1>
+    </div>
+    <div class="how-to-play-container">
+      <div class="how-to-play-left"></div>
+      <div class="how-to-play">
+        <div class="how-to-play-header">
+          <h2>How to Play</h2>
+          <button class="how-to-play-toggle">
+            <i class="fas fa-question-circle"></i>
+          </button>
+        </div>
+        <div class="how-to-play-content" style="display: none;">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat quod mollitia est at, corporis earum reprehenderit officiis ipsum impedit! Iure, voluptates ratione! Maiores quidem facilis autem ut, corporis mollitia accusantium?
+          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ab placeat quos fugit eveniet error ipsa alias iure maiores! Harum facere eos corporis quisquam. Nostrum dolore expedita sapiente explicabo cum!</p>
+        </div>
+      </div>
+      <div class="how-to-play-right"></div>
+    </div>
     <div class="playfield-container">
-        <div class="playfield-left"></div>
-            <div class="playfield">
-                <div class="label">WORD TILES</div>
-                <div class="wordtiles">
-                    <button class="wordtile hidden selected">W</button>
-                    <button class="wordtile hidden">O</button>
-                    <button class="wordtile hidden">R</button>
-                    <button class="wordtile hidden">D</button>
-                    <button class="wordtile hidden">H</button>
-                    <button class="wordtile hidden">U</button>
-                    <button class="wordtile hidden">R</button>
-                    <button class="wordtile hidden">L</button>
-                </div>
-                <div class="label">GUESS TILES</div>
-                <div class="guesstiles">
-                    <button class="guesstile hidden">W</button>
-                    <button class="guesstile hidden">O</button>
-                    <button class="guesstile hidden">R</button>
-                    <button class="guesstile hidden">D</button>
-                    <button class="guesstile hidden">H</button>
-                    <button class="guesstile hidden">U</button>
-                    <button class="guesstile hidden">R</button>
-                    <button class="guesstile hidden">L</button>
-                </div>
-                <div class="label">HISTORY</div>
-                <div class="historytiles">
-                    <button class="historytile matched">W</button>
-                    <button class="historytile matched">O</button>
-                    <button class="historytile matched">R</button>
-                    <button class="historytile matched">D</button>
-                    <button class="historytile matched">H</button>
-                    <button class="historytile matched">U</button>
-                    <button class="historytile matched">R</button>
-                    <button class="historytile matched">L</button>
-                </div>
-                <div class="historytiles">
-                    <button class="historytile matched">W</button>
-                    <button class="historytile matched">O</button>
-                    <button class="historytile matched">R</button>
-                    <button class="historytile matched">D</button>
-                    <button class="historytile matched">H</button>
-                    <button class="historytile matched">U</button>
-                    <button class="historytile matched">R</button>
-                    <button class="historytile"></button>
-                </div>
-                <div class="historytiles">
-                    <button class="historytile matched">W</button>
-                    <button class="historytile matched">O</button>
-                    <button class="historytile matched">R</button>
-                    <button class="historytile matched">D</button>
-                    <button class="historytile matched">H</button>
-                    <button class="historytile matched">U</button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                </div>
-                <div class="historytiles">
-                    <button class="historytile matched">W</button>
-                    <button class="historytile matched">O</button>
-                    <button class="historytile matched">R</button>
-                    <button class="historytile matched">D</button>
-                    <button class="historytile matched">H</button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                </div>
-                <div class="historytiles">
-                    <button class="historytile matched">W</button>
-                    <button class="historytile matched">O</button>
-                    <button class="historytile matched">R</button>
-                    <button class="historytile matched">D</button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                </div>
-                <div class="historytiles">
-                    <button class="historytile matched">W</button>
-                    <button class="historytile matched">O</button>
-                    <button class="historytile matched">R</button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                </div>
-                <div class="historytiles">
-                    <button class="historytile matched">W</button>
-                    <button class="historytile miss"></button>
-                    <button class="historytile matched">R</button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                </div>
-                <div class="historytiles">
-                    <button class="historytile matched">W</button>
-                    <button class="historytile"></button>
-                    <button class="historytile matched">R</button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                </div>
-                <div class="historytiles">
-                    <button class="historytile matched">W</button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                    <button class="historytile"></button>
-                </div>
-            </div>
-        <div class="playfield-right"></div>
+      <div class="playfield-left"></div>
+      <div class="playfield">
+        <div class="label">WORD TILES</div>
+        <div class="wordtiles">
+          <button class="wordtile hidden selected">W</button>
+          <button class="wordtile hidden">O</button>
+          <button class="wordtile hidden">R</button>
+          <button class="wordtile hidden">D</button>
+          <button class="wordtile hidden">H</button>
+          <button class="wordtile hidden">U</button>
+          <button class="wordtile hidden">R</button>
+          <button class="wordtile hidden">L</button>
+        </div>
+        <div class="label">GUESS TILES</div>
+        <div class="guesstiles">
+          <button class="guesstile hidden">W</button>
+          <button class="guesstile hidden">O</button>
+          <button class="guesstile hidden">R</button>
+          <button class="guesstile hidden">D</button>
+          <button class="guesstile hidden">H</button>
+          <button class="guesstile hidden">U</button>
+          <button class="guesstile hidden">R</button>
+          <button class="guesstile hidden">L</button>
+        </div>
+        <div class="label">HISTORY</div>
+        <div class="historytiles">
+          <button class="historytile matched">W</button>
+          <button class="historytile matched">O</button>
+          <button class="historytile matched">R</button>
+          <button class="historytile matched">D</button>
+          <button class="historytile matched">H</button>
+          <button class="historytile matched">U</button>
+          <button class="historytile matched">R</button>
+          <button class="historytile matched">L</button>
+        </div>
+        <div class="historytiles">
+          <button class="historytile matched">W</button>
+          <button class="historytile matched">O</button>
+          <button class="historytile matched">R</button>
+          <button class="historytile matched">D</button>
+          <button class="historytile matched">H</button>
+          <button class="historytile matched">U</button>
+          <button class="historytile matched">R</button>
+          <button class="historytile"></button>
+        </div>
+        <div class="historytiles">
+          <button class="historytile matched">W</button>
+          <button class="historytile matched">O</button>
+          <button class="historytile matched">R</button>
+          <button class="historytile matched">D</button>
+          <button class="historytile matched">H</button>
+          <button class="historytile matched">U</button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+        </div>
+        <div class="historytiles">
+          <button class="historytile matched">W</button>
+          <button class="historytile matched">O</button>
+          <button class="historytile matched">R</button>
+          <button class="historytile matched">D</button>
+          <button class="historytile matched">H</button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+        </div>
+        <div class="historytiles">
+          <button class="historytile matched">W</button>
+          <button class="historytile matched">O</button>
+          <button class="historytile matched">R</button>
+          <button class="historytile matched">D</button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+        </div>
+        <div class="historytiles">
+          <button class="historytile matched">W</button>
+          <button class="historytile matched">O</button>
+          <button class="historytile matched">R</button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+        </div>
+        <div class="historytiles">
+          <button class="historytile matched">W</button>
+          <button class="historytile miss"></button>
+          <button class="historytile matched">R</button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+        </div>
+        <div class="historytiles">
+          <button class="historytile matched">W</button>
+          <button class="historytile"></button>
+          <button class="historytile matched">R</button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+        </div>
+        <div class="historytiles">
+          <button class="historytile matched">W</button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+          <button class="historytile"></button>
+        </div>
+      </div>
+      <div class="playfield-right"></div>
     </div>
     <script src="load.js" defer></script>
     <script src="script.js" defer></script>
-</body>
+  </body>
 </html>
