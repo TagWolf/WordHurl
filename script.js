@@ -26,6 +26,7 @@
 // * Add customization for random word selection (min/max of common letters/word difficulty, min/max # of repeating characters, min/max # of vowels, min/max # of consonants, etc.)
 // * optimize javascript and reduce wordlist size
 // * React?? switch to sqlite for wordlist and archive tracking (see wordhurl-junkfiles for wordhurl.sqlite3 file)
+// * Rename script files to more meaningful names. E.g. wordhurlLoader.js, 
 
 const words = [
   "ABIOGENETICALLY",
@@ -202068,6 +202069,7 @@ const words = [
 ];
 
 // Script to hide/show How To Play
+// TODO: Move to a separate UI / nav script file
 var howToPlayToggle = document.querySelector(".how-to-play-toggle");
 var howToPlayContent = document.querySelector(".how-to-play-content");
 howToPlayToggle.addEventListener("click", function (event) {
