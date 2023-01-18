@@ -14,6 +14,7 @@
 // * Check if all guesstiles are correct
 // * track score
 // * track history
+// * animate history, prev history should slide down, then deal new history row like page load does
 // * slide animate history below playfield
 // * Animate win
 // * display score and graphs on win
