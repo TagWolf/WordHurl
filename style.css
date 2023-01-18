@@ -71,27 +71,20 @@ body {
   align-items: center;
 }
 
-.playfield {
-  text-align: center;
+.playfield-container {
+  display: block;
+  width: 100%;
 }
 
-.playfield-container {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
+.playfield {
+  text-align: center;
 }
 
 .label {
   color: #fff;
   font-size: 1.5vw;
   font-weight: bold;
-  text-align: left;
-  /*margin: 1rem 0rem 0rem 0.25rem;*/
-  margin-left: 1.5vw;
-}
-
-.wordtiles {
-  display: inline-flex;
+  text-align: center;
 }
 
 .wordtile.matched {
@@ -100,8 +93,10 @@ body {
 }
 
 .wordtile {
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  margin-bottom: 1rem;
   color: #555;
-  margin: 0rem 0.3rem 0rem 0.3rem;
 }
 
 .wordtile:hover {
@@ -115,12 +110,10 @@ body {
   transition: scale 0.2s ease-in-out;
 }
 
-.guesstiles {
-  display: inline-flex;
-}
-
 .guesstile {
-  margin: 0rem 0.3rem 0rem 0.3rem;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  margin-bottom: 1rem;
 }
 
 .guesstile.matched {
@@ -139,14 +132,12 @@ body {
   transition: scale 0.2s ease-in-out;
 }
 
-.historytiles {
-  display: inline-flex;
-}
-
 .historytile {
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  margin-bottom: 1rem;
   background-color: #111;
   color: #777;
-  margin: 0rem 0.3rem 0.6rem 0.3rem;
 }
 
 .historytile.matched {
