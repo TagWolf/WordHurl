@@ -45,8 +45,13 @@ body {
 }
 
 .how-to-play-toggle {
-  background-color: #222;
+  background-color: transparent;
   font-size: 1.5rem;
+}
+
+.how-to-play-toggle:hover {
+  transform: scale(150%);
+  transition: scale 0.2s ease-in-out;
 }
 
 .how-to-play-content {
