@@ -12,7 +12,8 @@
 // * show animation if guesstile is clicked before a wordtile is selected
 // * don't show marquee from guesstiles if wordtile isn't selected
 // * Check if all guesstiles are correct
-// * track score
+// * track score (number of guesses, number of misses, number of hits, number of correct guesses, word lenght, etc.)
+// * create score gph
 // * track history
 // * animate history, prev history should slide down, then deal new history row like page load does
 // * slide animate history below playfield
@@ -21,6 +22,7 @@
 // * countdown to next game unlock (see wordle)
 // * reset / new game
 // * WHEN POSSIBLE, MAKE EVERYTHING A FUNCTION
+// * Also ensure tab switches between wordtiles
 
 const words = [
   "ABIOGENETICALLY",
