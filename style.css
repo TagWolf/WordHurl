@@ -20,8 +20,6 @@ body {
   font-weight: bold;
   text-align: center;
   align-items: center;
-  margin: 0;
-  margin-bottom: -2.5rem;
 }
 
 .header-word {
@@ -37,7 +35,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
-  margin: 0;
+  align-items: center;
 }
 
 .how-to-play {
@@ -45,16 +43,10 @@ body {
   text-align: center;
 }
 
-.how-to-play-header {
-  display: inline-flex;
-  text-align: center;
-  align-items: center;
-  font-size: 0.75vw;
-}
-
 .how-to-play-toggle {
   background-color: transparent;
-  font-size: 1.5vw;
+  font-size: 3vw;
+  margin-bottom: 2rem;
 }
 
 .how-to-play-toggle:hover {
