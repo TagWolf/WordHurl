@@ -20,6 +20,7 @@
 // * display score and graphs on win
 // * countdown to next game unlock (see wordle)
 // * reset / new game
+// * WHEN POSSIBLE, MAKE EVERYTHING A FUNCTION
 
 const words = [
   "ABIOGENETICALLY",
@@ -202108,11 +202109,13 @@ guessTiles.forEach((guessTile) => {
     const selectedWordTile = document.querySelector(".wordtile.selected");
     if (selectedWordTile) {
       if (guessTile.textContent === selectedWordTile.textContent) {
+        // TODO: Change to function calls
         selectedWordTile.classList.add("matched");
         guessTile.classList.add("matched");
         selectedWordTile.classList.remove("selected");
       } else {
         selectedWordTile.classList.remove("selected");
+        guessTile.classList.add("miss");
       }
     }
   });

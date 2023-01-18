@@ -61,6 +61,11 @@ body {
     color: #999;
 }
 
+.guesstile.miss {
+    background-color: #f44336;
+    animation: shake 1s;
+}
+
 .guesstile:hover {
     transform: scale(110%);
     transition: scale 0.2s ease-in-out;
