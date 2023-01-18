@@ -25,24 +25,21 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: left;
-  margin: 1rem 0.25rem 1rem;
+  margin: 1rem 0rem 0rem 0.25rem;
 }
 
 .wordtiles {
   display: inline-flex;
 }
 
-.wordtile {
-    margin: 1rem 0.3rem;
-}
-
 .wordtile.matched {
-  background-color: #4caf50;
-  color: #fff;
+    background-color: #4caf50;
+    color: #fff;
 }
 
 .wordtile {
-  color: #555;
+    color: #555;
+    margin: 0rem 0.3rem 0rem 0.3rem;
 }
 
 .wordtile:hover {
@@ -61,7 +58,7 @@ body {
 }
 
 .guesstile {
-    margin: 1rem 0.3rem;
+    margin: 0rem 0.3rem 0rem 0.3rem;
 }
 
 .guesstile.matched {
@@ -87,7 +84,7 @@ body {
 .historytile {
   background-color: #111;
   color: #777;
-  margin: 0.3rem 0.3rem;
+  margin: 0rem 0.3rem 0.6rem 0.3rem;
 }
 
 .historytile.matched {
