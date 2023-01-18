@@ -73,6 +73,7 @@ body {
 
 .historytiles {
     display: inline-flex;
+    margin: -0.7rem 0;
 }
 
 .historytile {
