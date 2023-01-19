@@ -42,6 +42,7 @@ console.log(scrambledWord);
 scrambledWord.split('').forEach((letter, i) => {
   const wordTile = document.createElement('button');
   wordTile.classList.add('wordtile', 'hidden');
+  wordTile.dataset.guesses = '';
   wordTile.dataset.index = i;
   if (i === 0) {
     wordTile.classList.add('selected');

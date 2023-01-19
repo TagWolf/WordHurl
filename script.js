@@ -61,13 +61,11 @@ howToPlayToggle.addEventListener("click", function (event) {
 // Word tile selection
 wordTilesContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('wordtile')) {
-    if (e.target.classList.contains('selected')) {
-      e.target.classList.remove('selected');
-    } else {
-      wordTilesContainer
-        .querySelector('.selected')
-        ?.classList.remove('selected');
-      e.target.classList.add('selected');
+    const isUnselected = !e.target.classList.contains('selected');
+    
+    unselectWordTile();
+    if (isUnselected) {
+      selectWordTile(e.target);
     }
   }
 });
@@ -93,9 +91,10 @@ guessTilesContainer.addEventListener('click', (e) => {
     selectedWordTile.classList.add('matched');
     selectedWordTile.innerText = letter;
   } else {
+    addGuessToWordTile(selectedWordTile, letter);
     e.target.classList.add('miss');
   }
-  selectedWordTile.classList.remove('selected');
+  unselectWordTile();
 });
 
 // If click is not on a wordtile or guess tile then remove the selected class from all word tiles
@@ -104,8 +103,39 @@ document.addEventListener('click', (e) => {
     !e.target.classList.contains('wordtile') &&
     !e.target.classList.contains('guesstile')
   ) {
-    wordTiles.forEach((wordTile) => {
-      wordTile.classList.remove('selected');
-    });
+    unselectWordTile();
   }
 });
+
+function addGuessToWordTile (tile, letter) {
+  const { guesses } = tile.dataset;
+  tile.dataset.guesses = !guesses ? letter : `${guesses},${letter}`;
+}
+
+function wasLetterAlreadyGuessed (tile, letter) {
+  return tile.dataset.guesses.split(',').includes(letter);
+}
+
+function selectWordTile (tile) {
+  const { guesses } = tile.dataset;
+  tile.classList.add('selected');
+  const previousGuesses = guesses.split(',');
+  const letters = guessTilesContainer.querySelectorAll('.guesstile');
+
+  [].forEach.call(letters, (el) => {
+    if (previousGuesses.includes(el.dataset.letter)) {
+      el.classList.add('disallowed');
+    }
+  });
+}
+
+function unselectWordTile () {
+  const tile = wordTilesContainer.querySelector('.selected');
+  if(tile) {
+    tile.classList.remove('selected');
+    const disallowed = guessTilesContainer.querySelectorAll('.disallowed');
+    [].forEach.call(disallowed, (letter) => letter.classList.remove('disallowed'));
+  }
+}
+
+
