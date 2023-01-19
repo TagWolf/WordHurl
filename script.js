@@ -28,37 +28,19 @@
 // * React?? switch to sqlite for wordlist and archive tracking (see wordhurl-junkfiles for wordhurl.sqlite3 file)
 // * Rename script files to more meaningful names. E.g. wordhurlLoader.js,
 
-// Script to hide/show How To Play
-// TODO: Move to a separate UI / nav script file
-var howToPlayToggle = document.querySelector(".how-to-play-toggle");
-var howToPlayContent = document.querySelector(".how-to-play-content");
-howToPlayToggle.addEventListener("click", function (event) {
-  if (howToPlayContent.style.display == "") {
-    howToPlayContent.style.display = "none";
-  } else {
-    howToPlayContent.style.display = "";
-  }
-});
 
-// TODO: Create random seed function
-// Resource: https://github.com/davidbau/seedrandom
-// Resource: https://stackoverflow.com/questions/521295/seeding-the-random-number-generator-in-javascript
 
-// TODO: Use randomSeed to pick a randomWord from words based on today's date
+// TODO: Load word and scrambled tiles from data\words.py
 
-// TODO: Use randomSeed to scramble randomWord to generate guessTiles
+// TODO: From words.py Pick word and scrambled from array in order based on date
 
-// TODO: Add guessTile button with characters from randomWord
+// DONE: Check guessTile vs selected wordTile as an index of randomWord
 
-// TODO: Check guessTile vs selected wordTile as an index of randomWord
-
-// TODO: Enhance guess function to handle comparing guessTile clicked or typed with today's word
+// TODO: Enhance guess function to handle comparing guessTile clicked or typed against word
 
 // TODO: Handle scoring on hits / miss
 
 // POSSIBLE TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
-
-// TODO: Add parameters to picking the word (See todo items at top of this script)
 
 // Word tile selection
 wordTilesContainer.addEventListener('click', (e) => {
