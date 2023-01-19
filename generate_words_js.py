@@ -45704,13 +45704,13 @@ print(len(parsed_words))
 
 print('Writing new words.js file...')
 
-with open('words.js', 'w') as f:
+with open('data\words.js', 'w') as f:
     f.write('const words = [')
-    n = 1
+    n = 0
     for word in parsed_words:
-      if n == 1:
-        f.write("['" + word[0] + "'],['" + word[1] + "'],\n")
-        n = 0
+      if n == 0:
+        f.write("[[" + str(n) + "],['" + word[0] + "'],['" + word[1] + "']],\n")
       else:
-        f.write("\t\t  ['" + word[0] + "'],['" + word[1] + "'],\n")
+        f.write("\t\t\t   [[" + str(n) + "],['" + word[0] + "'],['" + word[1] + "']],\n")
+      n += 1
     f.write('\t\t];')
