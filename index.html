@@ -16,150 +16,135 @@
   </head>
   <body>
     <!-- HEADER -->
-    <div class="header">
+    <header class="header">
       <h1><span class="header-word">Word</span><span class="header-hurl">Hurl</span></h1>
-    </div>
+    </header>
     <!-- HOW TO PLAY -->
-    <div class="how-to-play-container">
-      <div class="how-to-play-left"></div>
-      <div class="how-to-play">
-        <div class="how-to-play-header">
-          <button class="how-to-play-toggle">
-            <i class="fas fa-question-circle"></i>
-          </button>
+    <main>
+      <div class="how-to-play-container">
+        <div class="how-to-play-left"></div>
+        <div class="how-to-play">
+          <div class="how-to-play-header">
+            <button class="how-to-play-toggle">
+              <i class="fas fa-question-circle"></i>
+            </button>
+          </div>
+          <div class="how-to-play-content" style="display: none;">
+              <p>WordHurl is a word game that is a little bit Hangman, Scrabble, and a dash of Wordle sprinkled on top. Your goal is to figure out what today's word is that is hidden in the <b>Word Tiles</b>.</p>
+              <p>There are three main rows of tiles. The <b>Word Tiles</b> which is the word you are trying to figure out one guess at a time, the <b>Guess Tiles</b> which contains all the letters of the word hidden above (but in a random order), and <b>History Tiles</b> which keep a record of your hits and misses during the entire game.</p>
+              <p>Start by guessing a letter position in the <b>Word Tile</b> row by selecting one of the <b>Word Tiles</b> and then clicking the <b>Guess Tile</b>. The game will let you know if you got a hit or a miss and keep a record of guesses for each <b>Word Tile</b>. Selecting a different <b>Word Tile</b> will have a completely different set of hit and misses.</p>
+              <p>When you correctly guess the position of one of your scrambled <b>Guess Tiles</b>, the <b>Word Tile</b> where the <b>Guess Tile</b> goes will reveal itself and the <b>Guess Tile</b> will becoming inactive.</p>
+              <p>Continue the process of picking a <b>Word Tile</b> and guessing with a <b>Guess Tile</b> until you have uncovered the entire word.</p>
+              <p><h4>Try to impress your friends by using the least number of guesses possible to solve the puzzle for today and share your score on social media!</h4></p>
+              <p>Tips #1: Games reset to a new word at midnight.</p>
+              <p>Tips #2: A correct guess (hit) will case the selection box to automatically move to the next unsolved tile on the right.</p>
+              <p>Tips #3: You can either click a <b>Guess Tile</b> or type the matching letter on your keyboard.</p>
+          </div>
         </div>
-        <div class="how-to-play-content" style="display: none;">
-            <p>WordHurl is a word game that is a little bit Hangman, Scrabble, and a dash of Wordle sprinkled on top. Your goal is to figure out what today's word is that is hidden in the <b>Word Tiles</b>.</p>
-            <p>There are three main rows of tiles. The <b>Word Tiles</b> which is the word you are trying to figure out one guess at a time, the <b>Guess Tiles</b> which contains all the letters of the word hidden above (but in a random order), and <b>History Tiles</b> which keep a record of your hits and misses during the entire game.</p>
-            <p>Start by guessing a letter position in the <b>Word Tile</b> row by selecting one of the <b>Word Tiles</b> and then clicking the <b>Guess Tile</b>. The game will let you know if you got a hit or a miss and keep a record of guesses for each <b>Word Tile</b>. Selecting a different <b>Word Tile</b> will have a completely different set of hit and misses.</p>
-            <p>When you correctly guess the position of one of your scrambled <b>Guess Tiles</b>, the <b>Word Tile</b> where the <b>Guess Tile</b> goes will reveal itself and the <b>Guess Tile</b> will becoming inactive.</p>
-            <p>Continue the process of picking a <b>Word Tile</b> and guessing with a <b>Guess Tile</b> until you have uncovered the entire word.</p>
-            <p><h4>Try to impress your friends by using the least number of guesses possible to solve the puzzle for today and share your score on social media!</h4></p>
-            <p>Tips #1: Games reset to a new word at midnight.</p>
-            <p>Tips #2: A correct guess (hit) will case the selection box to automatically move to the next unsolved tile on the right.</p>
-            <p>Tips #3: You can either click a <b>Guess Tile</b> or type the matching letter on your keyboard.</p>
+        <div class="how-to-play-right"></div>
+      </div>
+      <!-- PLAYFIELD -->
+      <div class="playfield-container">
+        <div class="playfield">
+          <div class="label">WORD TILES</div>
+          <div id="wordtiles" class="wordtiles"> </div>
+          <div class="label">GUESS TILES</div>
+          <div class="guesstiles" id="guesstiles"></div>
+          <div class="label">HISTORY</div>
+          <div class="historytiles">
+            <button class="historytile matched">W</button>
+            <button class="historytile matched">O</button>
+            <button class="historytile matched">R</button>
+            <button class="historytile matched">D</button>
+            <button class="historytile matched">H</button>
+            <button class="historytile matched">U</button>
+            <button class="historytile matched">R</button>
+            <button class="historytile matched">L</button>
+          </div>
+          <div class="historytiles">
+            <button class="historytile matched">W</button>
+            <button class="historytile matched">O</button>
+            <button class="historytile matched">R</button>
+            <button class="historytile matched">D</button>
+            <button class="historytile matched">H</button>
+            <button class="historytile matched">U</button>
+            <button class="historytile matched">R</button>
+            <button class="historytile">?</button>
+          </div>
+          <div class="historytiles">
+            <button class="historytile matched">W</button>
+            <button class="historytile matched">O</button>
+            <button class="historytile matched">R</button>
+            <button class="historytile matched">D</button>
+            <button class="historytile matched">H</button>
+            <button class="historytile matched">U</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+          </div>
+          <div class="historytiles">
+            <button class="historytile matched">W</button>
+            <button class="historytile matched">O</button>
+            <button class="historytile matched">R</button>
+            <button class="historytile matched">D</button>
+            <button class="historytile matched">H</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+          </div>
+          <div class="historytiles">
+            <button class="historytile matched">W</button>
+            <button class="historytile matched">O</button>
+            <button class="historytile matched">R</button>
+            <button class="historytile matched">D</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+          </div>
+          <div class="historytiles">
+            <button class="historytile matched">W</button>
+            <button class="historytile matched">O</button>
+            <button class="historytile matched">R</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+          </div>
+          <div class="historytiles">
+            <button class="historytile matched">W</button>
+            <button class="historytile miss"><i class="fas fa-times-circle"></i></button>
+            <button class="historytile matched">R</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+          </div>
+          <div class="historytiles">
+            <button class="historytile matched">W</button>
+            <button class="historytile">?</button>
+            <button class="historytile matched">R</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+          </div>
+          <div class="historytiles">
+            <button class="historytile matched">W</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+            <button class="historytile">?</button>
+          </div>
         </div>
       </div>
-      <div class="how-to-play-right"></div>
-    </div>
-    <!-- PLAYFIELD -->
-    <div class="playfield-container">
-      <div class="playfield">
-        <div class="label">WORD TILES</div>
-        <div class="wordtiles">
-          <button class="wordtile hidden selected">W</button>
-          <button class="wordtile hidden">O</button>
-          <button class="wordtile hidden">R</button>
-          <button class="wordtile hidden">D</button>
-          <button class="wordtile hidden">H</button>
-          <button class="wordtile hidden">U</button>
-          <button class="wordtile hidden">R</button>
-          <button class="wordtile hidden">L</button>
-        </div>
-        <div class="label">GUESS TILES</div>
-        <div class="guesstiles">
-          <button class="guesstile hidden">W</button>
-          <button class="guesstile hidden">O</button>
-          <button class="guesstile hidden">R</button>
-          <button class="guesstile hidden">D</button>
-          <button class="guesstile hidden">H</button>
-          <button class="guesstile hidden">U</button>
-          <button class="guesstile hidden">R</button>
-          <button class="guesstile hidden">L</button>
-        </div>
-        <div class="label">HISTORY</div>
-        <div class="historytiles">
-          <button class="historytile matched">W</button>
-          <button class="historytile matched">O</button>
-          <button class="historytile matched">R</button>
-          <button class="historytile matched">D</button>
-          <button class="historytile matched">H</button>
-          <button class="historytile matched">U</button>
-          <button class="historytile matched">R</button>
-          <button class="historytile matched">L</button>
-        </div>
-        <div class="historytiles">
-          <button class="historytile matched">W</button>
-          <button class="historytile matched">O</button>
-          <button class="historytile matched">R</button>
-          <button class="historytile matched">D</button>
-          <button class="historytile matched">H</button>
-          <button class="historytile matched">U</button>
-          <button class="historytile matched">R</button>
-          <button class="historytile">?</button>
-        </div>
-        <div class="historytiles">
-          <button class="historytile matched">W</button>
-          <button class="historytile matched">O</button>
-          <button class="historytile matched">R</button>
-          <button class="historytile matched">D</button>
-          <button class="historytile matched">H</button>
-          <button class="historytile matched">U</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-        </div>
-        <div class="historytiles">
-          <button class="historytile matched">W</button>
-          <button class="historytile matched">O</button>
-          <button class="historytile matched">R</button>
-          <button class="historytile matched">D</button>
-          <button class="historytile matched">H</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-        </div>
-        <div class="historytiles">
-          <button class="historytile matched">W</button>
-          <button class="historytile matched">O</button>
-          <button class="historytile matched">R</button>
-          <button class="historytile matched">D</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-        </div>
-        <div class="historytiles">
-          <button class="historytile matched">W</button>
-          <button class="historytile matched">O</button>
-          <button class="historytile matched">R</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-        </div>
-        <div class="historytiles">
-          <button class="historytile matched">W</button>
-          <button class="historytile miss"><i class="fas fa-times-circle"></i></button>
-          <button class="historytile matched">R</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-        </div>
-        <div class="historytiles">
-          <button class="historytile matched">W</button>
-          <button class="historytile">?</button>
-          <button class="historytile matched">R</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-        </div>
-        <div class="historytiles">
-          <button class="historytile matched">W</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-          <button class="historytile">?</button>
-        </div>
-      </div>
-    </div>
+    </main>
+    <script src="data/words.js"></script>
     <script src="load.js" defer></script>
     <script src="script.js" defer></script>
   </body>
