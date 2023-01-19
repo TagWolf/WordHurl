@@ -109,9 +109,9 @@ h1 {
 }
 
 .wordtile {
-  margin-left: 0.1rem;
-  margin-right: 0.1rem;
-  margin-bottom: 1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-bottom: 2rem;
   color: #555;
   vertical-align: top;
 }
@@ -128,9 +128,9 @@ h1 {
 }
 
 .guesstile {
-  margin-left: 0.1rem;
-  margin-right: 0.1rem;
-  margin-bottom: 1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-bottom: 2rem;
 }
 
 .misses-remaining {
@@ -160,9 +160,9 @@ h1 {
 }
 
 .historytile {
-  margin-left: 0.1rem;
-  margin-right: 0.1rem;
-  margin-bottom: 1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-bottom: 2rem;
   background-color: #111;
   color: #777;
 }
