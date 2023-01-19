@@ -55,14 +55,11 @@ h1 {
 }
 
 .how-to-play-container {
+  display: block;
+  color: #fff;
   padding-left: 20vw;
   padding-right: 20vw;
-  text-align: center;
-  align-items: center;
-}
-
-.how-to-play {
-  color: #fff;
+  width: 100%;
   text-align: center;
   align-items: center;
 }
