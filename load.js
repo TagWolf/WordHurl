@@ -4,8 +4,19 @@
 const wordTilesContainer = document.querySelector('#wordtiles');
 const guessTilesContainer = document.querySelector('#guesstiles');
 
-const randomWord = words.at(0)[0]; // This is the random word
-scrambledWord = words.at(1)[0];
+// Select randomWord based on date
+const date = new Date();
+const day = date.getDate();
+const month = date.getMonth();
+const year = date.getFullYear();
+const randomIndex = (day + month + year) % words.length;
+
+console.log('words.length',words.length);
+console.log('randomIndex',randomIndex);
+
+const randomWord = words.at(randomIndex)[1][0]; // This is the random word
+const scrambledWord = words.at(randomIndex)[2][0]; // This is the scrambled word
+
 console.log('randomWord', randomWord);
 console.log('scrambledWord', scrambledWord);
 
