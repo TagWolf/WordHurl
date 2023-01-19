@@ -34,7 +34,6 @@ body {
 
 .header {
   color: #fff;
-  font-size: 1vw;
   font-weight: bold;
   padding: 1em 0;
   text-align: center;
@@ -47,11 +46,12 @@ h1 {
 
 .header-word {
   color: rgb(157, 199, 255);
-  font-size: 3vw;
+  font-size: 6vh;
 }
 
 .header-hurl {
   color: rgb(255, 255, 255);
+  font-size: 4vh;
 }
 
 .how-to-play-container {
@@ -79,7 +79,7 @@ h1 {
 
 .how-to-play-content {
   font-family: var(--font-family-gill-sans);
-  font-size: 4vh;
+  font-size: 3vh;
   position: absolute;
   display: contents;
   text-align: left;
