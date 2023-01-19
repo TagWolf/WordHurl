@@ -88,6 +88,7 @@ h1 {
 
 .playfield-container {
   display: block;
+  align-items: center;
   width: 100%;
 }
 
@@ -97,7 +98,7 @@ h1 {
 
 .label {
   color: #fff;
-  font-size: 1.5vw;
+  font-size: 5vh;
   font-weight: bold;
   text-align: center;
 }
@@ -205,8 +206,8 @@ button.hidden {
 }
 
 button {
-  width: 3vw;
-  height: 3vw;
+  width: 8vh;
+  height: 8vh;
   border: none;
   background-color: #555;
   color: white;
@@ -214,7 +215,7 @@ button {
   align-items: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1vw;
+  font-size: 3vh;
   cursor: pointer;
   transform: scale(100%);
   transition: 0.3s ease-in-out;

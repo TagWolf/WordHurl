@@ -27,6 +27,7 @@
 // TODO: Enhance guess function to handle comparing guessTile clicked or typed against word
 // TODO: To increase fun and risk, add a maximum number of guesses per game based on word length. E.g. 3 guesses for 3 letter words, 4 guesses for 4 letter words, etc.
 // TODO: Handle scoring on hits / miss
+// TODO: Fix UI scaling. Needs to factor in height more than width for scaling purposes.
 // POSSIBLE TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
 
 // Word tile selection
