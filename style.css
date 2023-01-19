@@ -132,6 +132,10 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.misses-used {
+  margin-bottom: 1rem;
+}
+
 .guesstile.matched {
   background-color: #eee;
   opacity: 0.75;

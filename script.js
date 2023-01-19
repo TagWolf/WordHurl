@@ -25,6 +25,7 @@
 // TODO: From words.py Pick word and scrambled from array in order based on date
 // DONE: Check guessTile vs selected wordTile as an index of randomWord
 // TODO: Enhance guess function to handle comparing guessTile clicked or typed against word
+// TODO: To increase fun and risk, add a maximum number of guesses per game based on word length. E.g. 3 guesses for 3 letter words, 4 guesses for 4 letter words, etc.
 // TODO: Handle scoring on hits / miss
 // POSSIBLE TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
 
