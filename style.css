@@ -68,7 +68,7 @@ h1 {
 
 .how-to-play-toggle {
   background-color: transparent;
-  font-size: 3vw;
+  font-size: 6vh;
   margin-bottom: 2rem;
 }
 
@@ -79,7 +79,7 @@ h1 {
 
 .how-to-play-content {
   font-family: var(--font-family-gill-sans);
-  font-size: 1vw;
+  font-size: 4vh;
   position: absolute;
   display: contents;
   text-align: left;
