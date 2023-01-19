@@ -1,7 +1,6 @@
 // Main WordHurl script
 
 // TODO
-//
 // * Animate hit or miss and store set miss on the guess tile MAPPED to the selected wordtile only
 // * If hit / correct, automatically move selection to next wordtile on the right (allows typing solution)
 // * show animation if guesstile is clicked before a wordtile is selected
@@ -19,17 +18,14 @@
 // * WHEN POSSIBLE, MAKE EVERYTHING A FUNCTION
 // * React?? switch to sqlite for wordlist and archive tracking (see wordhurl-junkfiles for wordhurl.sqlite3 file)
 // * Rename script files to more meaningful names. E.g. wordhurlLoader.js,
+// * To prevent cheating, change this to server side by having the python script generate one randomWord and scrambleWord at midnight
 
+// Next TODO Items
 // TODO: Load word and scrambled tiles from data\words.py
-
 // TODO: From words.py Pick word and scrambled from array in order based on date
-
 // DONE: Check guessTile vs selected wordTile as an index of randomWord
-
 // TODO: Enhance guess function to handle comparing guessTile clicked or typed against word
-
 // TODO: Handle scoring on hits / miss
-
 // POSSIBLE TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
 
 // Word tile selection
@@ -44,6 +40,7 @@ wordTilesContainer.addEventListener("click", (e) => {
   }
 });
 
+// Guess tile selection
 guessTilesContainer.addEventListener("click", (e) => {
   const classList = e.target.classList;
   const selectedWordTile = wordTilesContainer.querySelector(".selected");
@@ -56,6 +53,7 @@ guessTilesContainer.addEventListener("click", (e) => {
     return;
   }
 
+  // Check guess hit / miss
   const { index } = selectedWordTile.dataset;
   const { letter } = e.target.dataset;
   console.log("clicked on:", letter, index);
@@ -81,6 +79,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Track guess mapping to word tile
 function addGuessToWordTile(tile, letter) {
   const { guesses } = tile.dataset;
   tile.dataset.guesses = !guesses ? letter : `${guesses},${letter}`;
