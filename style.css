@@ -69,7 +69,6 @@ h1 {
 .how-to-play-toggle {
   background-color: transparent;
   font-size: 6vh;
-  margin-bottom: 2rem;
 }
 
 .how-to-play-toggle:hover {
@@ -80,7 +79,6 @@ h1 {
 .how-to-play-content {
   font-family: var(--font-family-gill-sans);
   font-size: 3vh;
-  width: 100%;
   display: contents;
   text-align: left;
   align-items: center;
@@ -101,6 +99,7 @@ h1 {
   font-size: 5vh;
   font-weight: bold;
   text-align: center;
+  margin-top: .5rem;
 }
 
 .wordtile.matched {
@@ -111,7 +110,7 @@ h1 {
 .wordtile {
   margin-left: 0.2rem;
   margin-right: 0.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: #555;
   vertical-align: top;
 }
@@ -130,7 +129,7 @@ h1 {
 .guesstile {
   margin-left: 0.2rem;
   margin-right: 0.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .misses-remaining {
@@ -237,4 +236,5 @@ button {
 .footer a {
   color: #fff;
   text-decoration: none;
+  font-size: 3vh;
 }
