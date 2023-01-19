@@ -135,6 +135,7 @@ h1 {
 
 .misses-remaining {
   margin-bottom: 1rem;
+  font-size: 3vh;
 }
 
 .guesstile.matched {
