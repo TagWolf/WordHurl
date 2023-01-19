@@ -14,15 +14,15 @@ https://wordhurl.com should work in any modern browser on PC, iOS, or Android.
 
 ### Dependencies
 
-* A modern browser with support for JavaScript and CSS such as Chrome, FireFox, Edge, Safari, or similar.
+- A modern browser with support for JavaScript and CSS such as Chrome, FireFox, Edge, Safari, or similar.
 
 ### How to Play
 
-* To be written...
+- To be written...
 
 ### Where to Play
 
-* Navigate to https://wordhurl.com in your browser.
+- Navigate to https://wordhurl.com in your browser.
 
 ## Authors
 
@@ -32,8 +32,8 @@ David Cahill
 
 ## Version History
 
-* 0.1
-    * Development In Progress
+- 0.1
+  - Development In Progress
 
 ## License
 

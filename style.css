@@ -4,13 +4,16 @@
   --color-green: #4caf50;
   --color-red: #f44336;
   --font-family-default: "Roboto", sans-serif;
-  --font-family-gill-sans: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --font-family-gill-sans: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 }
 
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -38,7 +41,9 @@ body {
   align-items: center;
 }
 
-h1 { margin: 0; }
+h1 {
+  margin: 0;
+}
 
 .header-word {
   color: rgb(157, 199, 255);
@@ -46,7 +51,7 @@ h1 { margin: 0; }
 }
 
 .header-hurl {
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
 .how-to-play-container {

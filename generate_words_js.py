@@ -1,5 +1,5 @@
 import random
-import re
+import res
 from better_profanity import profanity
 
 words = [ "ABIOGENETICALLY", "ABORIGINALITIES", "ABSORBABILITIES",
