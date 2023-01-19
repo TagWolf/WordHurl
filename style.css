@@ -55,8 +55,8 @@ h1 {
 }
 
 .how-to-play-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: 20vw;
+  padding-right: 20vw;
   text-align: center;
   align-items: center;
 }
@@ -64,6 +64,7 @@ h1 {
 .how-to-play {
   color: #fff;
   text-align: center;
+  align-items: center;
 }
 
 .how-to-play-toggle {
@@ -99,7 +100,7 @@ h1 {
   font-size: 5vh;
   font-weight: bold;
   text-align: center;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .wordtile.matched {
@@ -222,11 +223,11 @@ button {
 }
 
 .footer {
-  width:100%;
-  position:fixed;
+  width: 100%;
+  position: fixed;
   bottom: 0px;
   color: #fff;
-  font-size: 1vw;
+  font-size: 3vh;
   font-weight: bold;
   padding: 1em 0;
   text-align: center;
@@ -236,5 +237,4 @@ button {
 .footer a {
   color: #fff;
   text-decoration: none;
-  font-size: 3vh;
 }
