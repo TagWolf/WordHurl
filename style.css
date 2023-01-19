@@ -34,7 +34,6 @@ body {
 
 .header {
   color: #fff;
-  font-size: 1vw;
   font-weight: bold;
   padding: 1em 0;
   text-align: center;
@@ -47,29 +46,27 @@ h1 {
 
 .header-word {
   color: rgb(157, 199, 255);
-  font-size: 3vw;
+  font-size: 6vh;
 }
 
 .header-hurl {
   color: rgb(255, 255, 255);
+  font-size: 4vh;
 }
 
 .how-to-play-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: block;
+  color: #fff;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  width: 100%;
   text-align: center;
   align-items: center;
 }
 
-.how-to-play {
-  color: #fff;
-  text-align: center;
-}
-
 .how-to-play-toggle {
   background-color: transparent;
-  font-size: 3vw;
-  margin-bottom: 2rem;
+  font-size: 6vh;
 }
 
 .how-to-play-toggle:hover {
@@ -79,8 +76,7 @@ h1 {
 
 .how-to-play-content {
   font-family: var(--font-family-gill-sans);
-  font-size: 1vw;
-  position: absolute;
+  font-size: 3vh;
   display: contents;
   text-align: left;
   align-items: center;
@@ -88,6 +84,7 @@ h1 {
 
 .playfield-container {
   display: block;
+  align-items: center;
   width: 100%;
 }
 
@@ -97,9 +94,10 @@ h1 {
 
 .label {
   color: #fff;
-  font-size: 1.5vw;
+  font-size: 5vh;
   font-weight: bold;
   text-align: center;
+  margin-top: 0.5rem;
 }
 
 .wordtile.matched {
@@ -108,8 +106,8 @@ h1 {
 }
 
 .wordtile {
-  margin-left: 0.1rem;
-  margin-right: 0.1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
   margin-bottom: 1rem;
   color: #555;
   vertical-align: top;
@@ -127,9 +125,14 @@ h1 {
 }
 
 .guesstile {
-  margin-left: 0.1rem;
-  margin-right: 0.1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
   margin-bottom: 1rem;
+}
+
+.misses-remaining {
+  margin-bottom: 1rem;
+  font-size: 3vh;
 }
 
 .guesstile.matched {
@@ -154,9 +157,9 @@ h1 {
 }
 
 .historytile {
-  margin-left: 0.1rem;
-  margin-right: 0.1rem;
-  margin-bottom: 1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-bottom: 2rem;
   background-color: #111;
   color: #777;
 }
@@ -201,8 +204,8 @@ button.hidden {
 }
 
 button {
-  width: 3vw;
-  height: 3vw;
+  width: 8vh;
+  height: 8vh;
   border: none;
   background-color: #555;
   color: white;
@@ -210,8 +213,25 @@ button {
   align-items: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1vw;
+  font-size: 3vh;
   cursor: pointer;
   transform: scale(100%);
   transition: 0.3s ease-in-out;
+}
+
+.footer {
+  width: 100%;
+  position: relative;
+  bottom: 0px;
+  color: #fff;
+  font-size: 3vh;
+  font-weight: bold;
+  padding: 1em 0;
+  text-align: center;
+  align-items: center;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
 }

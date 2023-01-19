@@ -1,25 +1,27 @@
 // This script file is for loading the initial animations and setting up the game playfield.
 // It is called by the index.html file.
 
+// Query selectors for word and guess tiles
 const wordTilesContainer = document.querySelector("#wordtiles");
 const guessTilesContainer = document.querySelector("#guesstiles");
 
-// Select randomWord based on date
+// Select randomWord based on today's date
+// TODO: To prevent cheating, change this to server side by having the python script generate
+//       one randomWord and scrambleWord at midnight
 const date = new Date();
 const day = date.getDate();
 const month = date.getMonth();
 const year = date.getFullYear();
 const randomIndex = (day + month + year) % words.length;
-
-console.log("words.length", words.length);
-console.log("randomIndex", randomIndex);
-
 const randomWord = words.at(randomIndex)[1][0]; // This is the random word
 const scrambledWord = words.at(randomIndex)[2][0]; // This is the scrambled word
 
+console.log("words.length", words.length);
+console.log("randomIndex", randomIndex);
 console.log("randomWord", randomWord);
 console.log("scrambledWord", scrambledWord);
 
+// Create word and guess tiles
 scrambledWord.split("").forEach((letter, i) => {
   const wordTile = document.createElement("button");
   wordTile.classList.add("wordtile", "hidden");
@@ -38,6 +40,7 @@ scrambledWord.split("").forEach((letter, i) => {
   guessTilesContainer.append(guessTile);
 });
 
+// Animate dealing tiles
 window.addEventListener("load", function () {
   const wordTiles = document.querySelectorAll(".wordtile");
   const guessTiles = document.querySelectorAll(".guesstile");
