@@ -80,7 +80,7 @@ h1 {
 .how-to-play-content {
   font-family: var(--font-family-gill-sans);
   font-size: 3vh;
-  position: absolute;
+  width: 100%;
   display: contents;
   text-align: left;
   align-items: center;
