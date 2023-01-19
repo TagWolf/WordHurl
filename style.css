@@ -221,6 +221,9 @@ button {
 }
 
 .footer {
+  width:100%;
+  position:fixed;
+  bottom: 0px;
   color: #fff;
   font-size: 1vw;
   font-weight: bold;
