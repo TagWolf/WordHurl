@@ -2,12 +2,7 @@
 
 // TODO
 //
-// * Update the word tile buttons based on today's word
-// * Fix randomization based on today's date
-// * Create a scrambled set of guess tiles from today's word and based on todays date's seed
-// * Check if selected wordtile matches clicked guesstiles OR typed guesstile letter
 // * Animate hit or miss and store set miss on the guess tile MAPPED to the selected wordtile only
-// * If guesstile is right, indicate that and disable that tile from future selection
 // * If hit / correct, automatically move selection to next wordtile on the right (allows typing solution)
 // * show animation if guesstile is clicked before a wordtile is selected
 // * don't show marquee from guesstiles if wordtile isn't selected
@@ -22,13 +17,8 @@
 // * countdown to next game unlock (see wordle)
 // * reset / new game
 // * WHEN POSSIBLE, MAKE EVERYTHING A FUNCTION
-// * Also ensure tab switches between wordtiles
-// * Add customization for random word selection (min/max of common letters/word difficulty, min/max # of repeating characters, min/max # of vowels, min/max # of consonants, etc.)
-// * optimize javascript and reduce wordlist size
 // * React?? switch to sqlite for wordlist and archive tracking (see wordhurl-junkfiles for wordhurl.sqlite3 file)
 // * Rename script files to more meaningful names. E.g. wordhurlLoader.js,
-
-
 
 // TODO: Load word and scrambled tiles from data\words.py
 
