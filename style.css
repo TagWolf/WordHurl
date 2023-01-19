@@ -219,3 +219,17 @@ button {
   transform: scale(100%);
   transition: 0.3s ease-in-out;
 }
+
+.footer {
+  color: #fff;
+  font-size: 1vw;
+  font-weight: bold;
+  padding: 1em 0;
+  text-align: center;
+  align-items: center;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
