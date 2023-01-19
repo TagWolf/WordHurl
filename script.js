@@ -50,6 +50,8 @@ howToPlayToggle.addEventListener("click", function (event) {
 
 // TODO: Add guessTile button with characters from randomWord
 
+// TODO: Check guessTile vs selected wordTile as an index of randomWord
+
 // TODO: Enhance guess function to handle comparing guessTile clicked or typed with today's word
 
 // TODO: Handle scoring on hits / miss
