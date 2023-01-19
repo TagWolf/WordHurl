@@ -2,12 +2,7 @@
 
 // TODO
 //
-// * Update the word tile buttons based on today's word
-// * Fix randomization based on today's date
-// * Create a scrambled set of guess tiles from today's word and based on todays date's seed
-// * Check if selected wordtile matches clicked guesstiles OR typed guesstile letter
 // * Animate hit or miss and store set miss on the guess tile MAPPED to the selected wordtile only
-// * If guesstile is right, indicate that and disable that tile from future selection
 // * If hit / correct, automatically move selection to next wordtile on the right (allows typing solution)
 // * show animation if guesstile is clicked before a wordtile is selected
 // * don't show marquee from guesstiles if wordtile isn't selected
@@ -22,41 +17,20 @@
 // * countdown to next game unlock (see wordle)
 // * reset / new game
 // * WHEN POSSIBLE, MAKE EVERYTHING A FUNCTION
-// * Also ensure tab switches between wordtiles
-// * Add customization for random word selection (min/max of common letters/word difficulty, min/max # of repeating characters, min/max # of vowels, min/max # of consonants, etc.)
-// * optimize javascript and reduce wordlist size
 // * React?? switch to sqlite for wordlist and archive tracking (see wordhurl-junkfiles for wordhurl.sqlite3 file)
 // * Rename script files to more meaningful names. E.g. wordhurlLoader.js,
 
-// Script to hide/show How To Play
-// TODO: Move to a separate UI / nav script file
-var howToPlayToggle = document.querySelector(".how-to-play-toggle");
-var howToPlayContent = document.querySelector(".how-to-play-content");
-howToPlayToggle.addEventListener("click", function (event) {
-  if (howToPlayContent.style.display == "") {
-    howToPlayContent.style.display = "none";
-  } else {
-    howToPlayContent.style.display = "";
-  }
-});
+// TODO: Load word and scrambled tiles from data\words.py
 
-// TODO: Create random seed function
-// Resource: https://github.com/davidbau/seedrandom
-// Resource: https://stackoverflow.com/questions/521295/seeding-the-random-number-generator-in-javascript
+// TODO: From words.py Pick word and scrambled from array in order based on date
 
-// TODO: Use randomSeed to pick a randomWord from words based on today's date
+// DONE: Check guessTile vs selected wordTile as an index of randomWord
 
-// TODO: Use randomSeed to scramble randomWord to generate guessTiles
-
-// TODO: Add guessTile button with characters from randomWord
-
-// TODO: Enhance guess function to handle comparing guessTile clicked or typed with today's word
+// TODO: Enhance guess function to handle comparing guessTile clicked or typed against word
 
 // TODO: Handle scoring on hits / miss
 
 // POSSIBLE TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
-
-// TODO: Add parameters to picking the word (See todo items at top of this script)
 
 // Word tile selection
 wordTilesContainer.addEventListener('click', (e) => {
