@@ -33,10 +33,10 @@
 // POSSIBLE TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
 
 // Word tile selection
-wordTilesContainer.addEventListener('click', (e) => {
-  if (e.target.classList.contains('wordtile')) {
-    const isUnselected = !e.target.classList.contains('selected');
-    
+wordTilesContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("wordtile")) {
+    const isUnselected = !e.target.classList.contains("selected");
+
     unselectWordTile();
     if (isUnselected) {
       selectWordTile(e.target);
@@ -44,13 +44,13 @@ wordTilesContainer.addEventListener('click', (e) => {
   }
 });
 
-guessTilesContainer.addEventListener('click', (e) => {
+guessTilesContainer.addEventListener("click", (e) => {
   const classList = e.target.classList;
-  const selectedWordTile = wordTilesContainer.querySelector('.selected');
+  const selectedWordTile = wordTilesContainer.querySelector(".selected");
   if (
-    !classList.contains('guesstile') ||
-    classList.contains('matched') ||
-    classList.contains('miss') ||
+    !classList.contains("guesstile") ||
+    classList.contains("matched") ||
+    classList.contains("miss") ||
     !selectedWordTile
   ) {
     return;
@@ -58,58 +58,58 @@ guessTilesContainer.addEventListener('click', (e) => {
 
   const { index } = selectedWordTile.dataset;
   const { letter } = e.target.dataset;
-  console.log('clicked on:', letter, index);
+  console.log("clicked on:", letter, index);
   if (letter === randomWord[index]) {
     // TODO: Change to function calls
-    e.target.classList.add('matched');
-    selectedWordTile.classList.add('matched');
+    e.target.classList.add("matched");
+    selectedWordTile.classList.add("matched");
     selectedWordTile.innerText = letter;
   } else {
     addGuessToWordTile(selectedWordTile, letter);
-    e.target.classList.add('miss');
+    e.target.classList.add("miss");
   }
   unselectWordTile();
 });
 
 // If click is not on a wordtile or guess tile then remove the selected class from all word tiles
-document.addEventListener('click', (e) => {
+document.addEventListener("click", (e) => {
   if (
-    !e.target.classList.contains('wordtile') &&
-    !e.target.classList.contains('guesstile')
+    !e.target.classList.contains("wordtile") &&
+    !e.target.classList.contains("guesstile")
   ) {
     unselectWordTile();
   }
 });
 
-function addGuessToWordTile (tile, letter) {
+function addGuessToWordTile(tile, letter) {
   const { guesses } = tile.dataset;
   tile.dataset.guesses = !guesses ? letter : `${guesses},${letter}`;
 }
 
-function wasLetterAlreadyGuessed (tile, letter) {
-  return tile.dataset.guesses.split(',').includes(letter);
+function wasLetterAlreadyGuessed(tile, letter) {
+  return tile.dataset.guesses.split(",").includes(letter);
 }
 
-function selectWordTile (tile) {
+function selectWordTile(tile) {
   const { guesses } = tile.dataset;
-  tile.classList.add('selected');
-  const previousGuesses = guesses.split(',');
-  const letters = guessTilesContainer.querySelectorAll('.guesstile');
+  tile.classList.add("selected");
+  const previousGuesses = guesses.split(",");
+  const letters = guessTilesContainer.querySelectorAll(".guesstile");
 
   [].forEach.call(letters, (el) => {
     if (previousGuesses.includes(el.dataset.letter)) {
-      el.classList.add('disallowed');
+      el.classList.add("disallowed");
     }
   });
 }
 
-function unselectWordTile () {
-  const tile = wordTilesContainer.querySelector('.selected');
-  if(tile) {
-    tile.classList.remove('selected');
-    const disallowed = guessTilesContainer.querySelectorAll('.disallowed');
-    [].forEach.call(disallowed, (letter) => letter.classList.remove('disallowed'));
+function unselectWordTile() {
+  const tile = wordTilesContainer.querySelector(".selected");
+  if (tile) {
+    tile.classList.remove("selected");
+    const disallowed = guessTilesContainer.querySelectorAll(".disallowed");
+    [].forEach.call(disallowed, (letter) =>
+      letter.classList.remove("disallowed")
+    );
   }
 }
-
-
