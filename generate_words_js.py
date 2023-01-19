@@ -1,5 +1,5 @@
 import random
-import res
+import re
 from better_profanity import profanity
 
 words = [ "ABIOGENETICALLY", "ABORIGINALITIES", "ABSORBABILITIES",
@@ -45677,7 +45677,6 @@ parsed_words = []
 
 word_length_min = 10
 word_length_max = 15
-word_repeating_letters = 0
 
 def check_profantity(word):
   return not profanity.contains_profanity(word)
@@ -45690,8 +45689,8 @@ def check_unique_letters(word):
 
 for word in words:
   if len(word) >= word_length_min and len(word) <= word_length_max:
-      #if check_unique_letters(word) and check_profantity(word):
-      if check_profantity(word):
+      if check_unique_letters(word) and check_profantity(word):
+      #if check_profantity(word):
         list_word = list(word)
         random.shuffle(list_word)
         shuffled_word = ''.join(list_word)
