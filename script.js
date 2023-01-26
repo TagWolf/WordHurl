@@ -5,6 +5,7 @@
 // TODO: When a wordTile is selected, show stored hits and misses unique to that wordTile only
 // TODO: When a wordTile is matched, the next wordTile to the right should be selected automatically
 // TODO: Allow guessTile selection via keyboard (A-Z)
+// TODO: Allow wordTile selection via arrow keys (and number keys?)
 // TODO: To increase fun and risk, add a maximum number of guesses per game based on word length. E.g. 3 guesses for 3 letter words, 4 guesses for 4 letter words, etc.
 // TODO: Track remaining misses and update UI and CSS
 // TODO: Check if all guesstiles are correct (Win Condition)
