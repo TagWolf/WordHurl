@@ -11,6 +11,7 @@
 // TODO: Countdown to next game unlock on score window/modal (see wordle)
 // TODO: Reset / New game / reload button when new game available
 // TODO: Check if player has already played today and show previously solved game if so (must survive browser close / reload)
+// TODO: Ensure random word selection based on day is working and won't duplicate words picked any time soon
 // TODO: Code cleanup, make everything a function where possible.
 // TODO: Animate hits and misses (color fade in and scale/bounce on hit, shake on miss?)
 // TODO: Animate miss remaining count with scale and fade (or whatever looks good)
