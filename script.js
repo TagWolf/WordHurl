@@ -1,5 +1,6 @@
 // Main WordHurl script
 
+/*
 // TODO
 // * Animate hit or miss and store set miss on the guess tile MAPPED to the selected wordtile only
 // * If hit / correct, automatically move selection to next wordtile on the right (allows typing solution)
@@ -19,14 +20,22 @@
 // * React?? switch to sqlite for wordlist and archive tracking (see wordhurl-junkfiles for wordhurl.sqlite3 file)
 // * Rename script files to more meaningful names. E.g. wordhurlLoader.js,
 // * To prevent cheating, change this to server side by having the python script generate one randomWord and scrambleWord at midnight
-
-// Next TODO Items
-// TODO: Load word and scrambled tiles from data\words.py
-// TODO: From words.py Pick word and scrambled from array in order based on date
+// DONE: Load word and scrambled tiles from data\words.py
+// DONE: From words.py Pick word and scrambled from array in order based on date
 // DONE: Check guessTile vs selected wordTile as an index of randomWord
+// DONE: Store hits and misses mapped from guessTile to wordTile
+*/
+
+// IMPORTANT Next TODO Items
+// =========================
+// TODO: When a wordTile is selected, show stored hits and misses unique to that wordTile
+// TODO: When a guessTile hits (matches), it should become disabled to prevent future guesses on it
+// TODO: When a guessTile misses, it should become disabled ONLY in the context of the selected wordTile to prevent additional guesses on it while that wordTile is selected
+// TODO: When a wordTile is matched, the next wordTile to the right should be selected automatically
 // TODO: Enhance guess function to handle comparing guessTile clicked or typed against word
 // TODO: To increase fun and risk, add a maximum number of guesses per game based on word length. E.g. 3 guesses for 3 letter words, 4 guesses for 4 letter words, etc.
-// TODO: Handle scoring on hits / miss
+// TODO: Track remaining misses
+// TODO: Track scoring
 // TODO: Fix UI scaling. Needs to factor in height more than width for scaling purposes.
 // POSSIBLE TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
 
