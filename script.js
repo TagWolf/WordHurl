@@ -30,6 +30,7 @@
 // TODO: Rename script files to more meaningful names.
 // TODO: Fix UI scaling. Needs to factor in height more than width for scaling purposes.
 // TODO: Display score modal and new game countdown timer on win (see wordle as example)
+// TODO: Admin page to show upcoming words and scrambled tiles for next X days with ability to delete word from rotation
 //
 // DEVELOPMENT PHASE III
 //
@@ -48,6 +49,7 @@
 // TODO: 508 Compliance (Alt text for misses remaining, etc.)
 // TODO: Better phone browser support and UI scaling
 // TODO: Add support for other languages
+// TODO: Admin portal
 //
 // COMPLETED DEVELOPMENT ITEMS
 //
