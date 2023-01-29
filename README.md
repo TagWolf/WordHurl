@@ -29,6 +29,7 @@ https://wordhurl.com should work in any modern browser on PC, iOS, or Android.
 Contributors names and contact info
 
 David Cahill
+Devon Maloney
 
 ## Version History
 
