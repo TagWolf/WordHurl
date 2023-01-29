@@ -45681,8 +45681,8 @@ parsed_words = []
 
 word_length_min = 10
 word_length_max = 15
-word_unique_letters = True
-word_no_profanity = True
+#word_unique_letters = True
+#word_no_profanity = True
 
 def check_profantity(word):
   return not profanity.contains_profanity(word)
