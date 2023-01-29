@@ -19,6 +19,7 @@
 // TODO: Show quick shake / error animation if guesstile is clicked before a wordtile is selected
 // TODO: Don't show selection marquee on guesstiles if a wordtile isn't selected
 // TODO: Animate Win (wave pattern from left to right scaling up and down on completed word tiles)
+// TODO: Fix first tile "deal" animation not showing due to its' automatic selection on load
 // TODO: Rename script files to more meaningful names. E.g. wordhurlLoader.js,
 // TODO: Fix UI scaling. Needs to factor in height more than width for scaling purposes.
 // TODO: Track score (number of guesses, number of misses, number of hits, number of correct guesses, word length, etc.)
