@@ -37,7 +37,7 @@
 //
 // TODO: Track history
 // TODO: Animate history, prev history should slide down, then deal new history row like page load does
-// TODO: Add configuration variables for things like selecting the first tile by default on load and other ui/ux things that would be likely to tweek
+// TODO: Add configuration variables for things like selecting the first tile by default on load, colors, animation types/rates, and other ui/ux things that would be likely to tweek
 //
 // DEVELOPMENT PHASE IIII
 //
