@@ -4,6 +4,7 @@ from better_profanity import profanity
 
 # This python script is used to generate a list of words and scrambled tiles for use in the game.
 # Currently this script filters out words that are profane, and words that are too short or too long.
+# In the future a script will exist to simply use the sqlite db and pull out the words from there and move them to the current today's word table
 
 words = [ "ABIOGENETICALLY", "ABORIGINALITIES", "ABSORBABILITIES",
   "ABSORBEFACIENTS", "ABSORPTIOMETERS", "ABSTRACTIONISMS",
@@ -45680,6 +45681,8 @@ parsed_words = []
 
 word_length_min = 10
 word_length_max = 15
+word_unique_letters = True
+word_no_profanity = True
 
 def check_profantity(word):
   return not profanity.contains_profanity(word)

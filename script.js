@@ -21,6 +21,7 @@
 // DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/01/2023
 //
 // TODO: Code cleanup, make everything a function where possible.
+// TODO: Ensure good comments throughout code and all functions
 // TODO: Animate hits and misses (color fade in with increased saturation/alpha and then lower to final color and scale/bounce on hit, shake on miss?)
 // TODO: Animate miss remaining count with scale and fade (or whatever looks good)
 // TODO: Show quick shake / error animation if guesstile is clicked before a wordtile is selected
@@ -35,6 +36,7 @@
 //
 // DEVELOPMENT PHASE III
 //
+// TODO: Possily scramble words.js (especially scrambled tiles) to make it harder to cheat (or just use a server side database)
 // TODO: Track history
 // TODO: Animate history, prev history should slide down, then deal new history row like page load does
 // TODO: Add configuration variables for things like selecting the first tile by default on load, colors, animation types/rates, and other ui/ux things that would be likely to tweek
