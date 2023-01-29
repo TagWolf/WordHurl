@@ -59,10 +59,17 @@
 // DONE: Check guessTile vs selected wordTile as an index of randomWord
 // DONE: Store hits and misses mapped from guessTile to wordTile
 
+const GUESS_TILE_CLASS = 'guesstile';
+const GUESS_TILE_MATCHED_CLASS = 'matched';
+
+const WORD_TILE_CLASS = 'wordtile';
+const WORD_TILE_MATCHED_CLASS = 'matched';
+const WORD_TILE_SELECTED_CLASS = 'selected';
+
 // Word tile selection
 wordTilesContainer.addEventListener("click", (e) => {
-  if (e.target.classList.contains("wordtile")) {
-    const isUnselected = !e.target.classList.contains("selected");
+  if (e.target.classList.contains(WORD_TILE_CLASS)) {
+    const isUnselected = !e.target.classList.contains(WORD_TILE_SELECTED_CLASS);
 
     unselectWordTile();
     if (isUnselected) {
@@ -74,10 +81,10 @@ wordTilesContainer.addEventListener("click", (e) => {
 // Guess tile selection
 guessTilesContainer.addEventListener("click", (e) => {
   const classList = e.target.classList;
-  const selectedWordTile = wordTilesContainer.querySelector(".selected");
+  const selectedWordTile = getSelectedWordTile();
   if (
-    !classList.contains("guesstile") ||
-    classList.contains("matched") ||
+    !classList.contains(GUESS_TILE_CLASS) ||
+    classList.contains(GUESS_TILE_MATCHED_CLASS) ||
     classList.contains("miss") ||
     !selectedWordTile
   ) {
@@ -89,24 +96,41 @@ guessTilesContainer.addEventListener("click", (e) => {
   const { letter } = e.target.dataset;
   console.log("clicked on:", letter, index);
   if (letter === randomWord[index]) {
-    // TODO: Change to function calls
-    e.target.classList.add("matched");
-    selectedWordTile.classList.add("matched");
+    e.target.classList.add(GUESS_TILE_MATCHED_CLASS);
+    selectedWordTile.classList.add(WORD_TILE_MATCHED_CLASS);
     selectedWordTile.innerText = letter;
+
+    // TODO: check win condition
+
+    // if not (win) 
+    selectNextAvailableTile();
   } else {
     addGuessToWordTile(selectedWordTile, letter);
     e.target.classList.add("miss");
   }
-  unselectWordTile();
 });
 
 // If click is not on a wordtile or guess tile then remove the selected class from all word tiles
 document.addEventListener("click", (e) => {
   if (
-    !e.target.classList.contains("wordtile") &&
-    !e.target.classList.contains("guesstile")
+    !e.target.classList.contains(WORD_TILE_CLASS) &&
+    !e.target.classList.contains(GUESS_TILE_CLASS)
   ) {
     unselectWordTile();
+  }
+});
+
+document.addEventListener('keydown', ({ key }) => {
+  switch (key) {
+    case 'ArrowRight':
+      selectNextAvailableTile();
+      break;
+    case 'ArrowLeft':
+      selectPreviousAvailableTile();
+      break;
+    default:
+      if (key.match(/[a-z]/i)) { guessLetter(key.toUpperCase()); }
+      break;
   }
 });
 
@@ -116,15 +140,23 @@ function addGuessToWordTile(tile, letter) {
   tile.dataset.guesses = !guesses ? letter : `${guesses},${letter}`;
 }
 
+function getWordTiles() {
+  return wordTilesContainer.querySelectorAll(`.${WORD_TILE_CLASS}`);
+}
+
+function getSelectedWordTile() {
+  return wordTilesContainer.querySelector(`.${WORD_TILE_SELECTED_CLASS}`);
+}
+
 function wasLetterAlreadyGuessed(tile, letter) {
   return tile.dataset.guesses.split(",").includes(letter);
 }
 
 function selectWordTile(tile) {
   const { guesses } = tile.dataset;
-  tile.classList.add("selected");
+  tile.classList.add(WORD_TILE_SELECTED_CLASS);
   const previousGuesses = guesses.split(",");
-  const letters = guessTilesContainer.querySelectorAll(".guesstile");
+  const letters = guessTilesContainer.querySelectorAll(`.${GUESS_TILE_CLASS}`);
 
   [].forEach.call(letters, (el) => {
     if (previousGuesses.includes(el.dataset.letter)) {
@@ -134,12 +166,68 @@ function selectWordTile(tile) {
 }
 
 function unselectWordTile() {
-  const tile = wordTilesContainer.querySelector(".selected");
+  const tile = getSelectedWordTile();
   if (tile) {
-    tile.classList.remove("selected");
+    tile.classList.remove(WORD_TILE_SELECTED_CLASS);
     const disallowed = guessTilesContainer.querySelectorAll(".disallowed");
     [].forEach.call(disallowed, (letter) =>
       letter.classList.remove("disallowed")
     );
   }
+}
+
+function selectNextAvailableTile() {
+  const allWordTiles = [...getWordTiles()];
+  const selectedWordTile = getSelectedWordTile();
+  const dataset = selectedWordTile?.dataset;
+  unselectWordTile();
+
+  // check for a word tile still available to select
+  if (!allWordTiles.some((tile) => !tile.classList.contains(WORD_TILE_MATCHED_CLASS))) {
+    console.log('no letter available to selectNextAvailableTile');
+    return;
+  }
+
+  let indexToCheck = (Number(dataset?.index) + 1) % allWordTiles.length;
+  if (isNaN(indexToCheck)) { indexToCheck = 0; }
+  for (let i = 0; i < allWordTiles.length; i++) {
+    if (!allWordTiles[indexToCheck].classList.contains(WORD_TILE_MATCHED_CLASS)) {
+      selectWordTile(allWordTiles[indexToCheck]);
+      return;
+    }
+    indexToCheck++;
+    if (indexToCheck === allWordTiles.length) {
+      indexToCheck = 0;
+    };
+  }
+}
+
+function selectPreviousAvailableTile() {
+  const allWordTiles = [...getWordTiles()];
+  const selectedWordTile = getSelectedWordTile();
+  const dataset = selectedWordTile?.dataset;
+  unselectWordTile();
+
+  // check for a word tile still available to select
+  if (!allWordTiles.some((tile) => !tile.classList.contains(WORD_TILE_MATCHED_CLASS))) {
+    console.log('no letter available to selectPreviousAvailableTile');
+    return;
+  }
+
+  let indexToCheck = Number(dataset?.index) - 1;
+  if (isNaN(indexToCheck) || indexToCheck === -1) { indexToCheck = allWordTiles.length - 1; }
+  for (let i = 0; i < allWordTiles.length; i++) {
+    if (!allWordTiles[indexToCheck].classList.contains(WORD_TILE_MATCHED_CLASS)) {
+      selectWordTile(allWordTiles[indexToCheck]);
+      return;
+    }
+    indexToCheck--;
+    if (indexToCheck < 0) {
+      indexToCheck = allWordTiles.length - 1;
+    };
+  }
+}
+
+function guessLetter(letter) {
+  console.log('guessLetter', letter);
 }
