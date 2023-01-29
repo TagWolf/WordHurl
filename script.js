@@ -47,6 +47,7 @@
 // TODO To prevent cheating, change this to server side by having the python script generate one randomWord and scrambleWord at midnight
 // TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
 // TODO: 508 Compliance (Alt text for misses remaining, etc.)
+// TODO: Better phone browser support and UI scaling
 //
 // COMPLETED DEVELOPMENT ITEMS
 //
