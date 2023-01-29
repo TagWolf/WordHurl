@@ -1,84 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-964538103"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'AW-964538103');
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZZXP75E5X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-964538103"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-        gtag('config', 'G-PZZXP75E5X');
-    </script>
-    <title>WordHurl</title>
-  </head>
-  <body>
-    <!-- HEADER -->
-    <header class="header">
-      <h1><span class="header-word">Word</span><span class="header-hurl">Hurl</span></h1>
-    </header>
-    <!-- MAIN -->
-    <main>
-      <!-- HOW TO PLAY -->
-      <div class="how-to-play-container">
-        <div class="how-to-play-header">
-          <i class="how-to-play-toggle fas fa-question-circle"></i>
-        </div>
-        <div class="how-to-play-content" style="display: none;">
-            <p><h2>How To Play</h2></p>
-            <p><b>TL;DR: </b>Click to select a <b>Word Tile</b> and then click or type the letter of a <b>Guess Tile</b> with the letter you think goes there before you run out of misses!</p>
-            <p>WordHurl is an addictive daily word game that is a little bit of Hangman and Scrabble, with a dash of BattleShip sprinkled on top. Your goal is to figure out what today's word is that is hidden in the <b>Word Tiles</b> by guessing which <b>Guess Tile</b> goes into a particular <b>Word Tile</b> slot before your <b>Misses Remaining</b> are completely gone.</p>
-            <p>There are three main rows of tiles. The <b>Word Tiles</b> hide the word you are trying to figure out one guess at a time, the <b>Guess Tiles</b> contains all the letters of the hidden word above but they are scrambled, and <b>History Tiles</b> keep a record of your guesses and whether they are hits or misses.</p>
-            <p>Start by guessing a letter position in the <b>Word Tile</b> row by selecting one of the <b>Word Tiles</b>. Think carefully and then click the <b>Guess Tile</b> you think goes in that slot. The game will let you know if you got a hit or a miss and keep a record of guesses for each <b>Word Tile</b>. A hit (match) will not count against your remaining turns, but a miss will.</p>
-            <p>When you correctly guess the position of one of your scrambled <b>Guess Tiles</b>, the <b>Word Tile</b> where the <b>Guess Tile</b> correctly goes will reveal itself and that <b>Guess Tile</b> will becoming inactive so you don't have to worry about guessing a tile you already figured out.</p>
-            <p>Pick another <b>Word Tile</b> and misses from the last tile will unmark themselves so you can try those unsolved <b>Guess Tiles</b> in other positions. Continue the process of picking a <b>Word Tile</b> and guessing with a <b>Guess Tile</b> until you have either uncovered the entire word or used up all of your misses.</p>
-            <p><h4>Try to impress your friends by using the least number of guesses possible to solve the puzzle for today and share your score on social media!</h4></p>
-            <p>Tips #1: Games reset to a new word at midnight.</p>
-            <p>Tips #2: A correct guess (hit) will case the selection box to automatically move to the next unsolved tile on the right.</p>
-            <p>Tips #3: You can either click a <b>Guess Tile</b> or type the matching letter on your keyboard.</p>
-        </div>
+    gtag('config', 'AW-964538103');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZZXP75E5X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-PZZXP75E5X');
+  </script>
+  <title>WordHurl</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <h1><span class="header-word">Word</span><span class="header-hurl">Hurl</span></h1>
+  </header>
+  <!-- MAIN -->
+  <main>
+    <!-- HOW TO PLAY -->
+    <div class="how-to-play-container">
+      <div class="how-to-play-header">
+        <i class="how-to-play-toggle fas fa-question-circle"></i>
       </div>
-      <!-- PLAYFIELD -->
-      <div class="playfield-container">
-        <div class="playfield">
-          <div class="label">WORD TILES</div>
-          <div id="wordtiles" class="wordtiles"> </div>
-          <div class="label">GUESS TILES</div>
-          <div class="misses-remaining">
-            <span class="misses-remaining-label">Misses Remaining:</span>
-            <i class="far fa-dot-circle" style="color: green;"></i>
-            <i class="far fa-dot-circle" style="color: green;"></i>
-            <i class="far fa-dot-circle" style="color: green;"></i>
-            <i class="far fa-dot-circle" style="color: green;"></i>
-            <i class="far fa-dot-circle" style="color: green;"></i>
-            <i class="far fa-dot-circle" style="color: green;"></i>
-            <i class="far fa-dot-circle" style="color: green;"></i>
-            <i class="far fa-dot-circle" style="color: green;"></i>
-            <i class="far fa-circle" style="color: red"></i>
-            <i class="far fa-circle" style="color: red"></i>
-          </div>
-          <div class="guesstiles" id="guesstiles"></div>
-          <!-- HISTORY SECTION IN DEVELOPMENT -->
-          <!--
+      <div class="how-to-play-content" style="display: none;">
+        <p>
+        <h2>How To Play</h2>
+        </p>
+        <p><b>TL;DR: </b>Click to select a <b>Word Tile</b> and then click or type the letter of a <b>Guess Tile</b>
+          with the letter you think goes there before you run out of misses!</p>
+        <p>WordHurl is an addictive daily word game that is a little bit of Hangman and Scrabble, with a dash of
+          BattleShip sprinkled on top. Your goal is to figure out what today's word is that is hidden in the <b>Word
+            Tiles</b> by guessing which <b>Guess Tile</b> goes into a particular <b>Word Tile</b> slot before your
+          <b>Misses Remaining</b> are completely gone.</p>
+        <p>There are three main rows of tiles. The <b>Word Tiles</b> hide the word you are trying to figure out one
+          guess at a time, the <b>Guess Tiles</b> contains all the letters of the hidden word above but they are
+          scrambled, and <b>History Tiles</b> keep a record of your guesses and whether they are hits or misses.</p>
+        <p>Start by guessing a letter position in the <b>Word Tile</b> row by selecting one of the <b>Word Tiles</b>.
+          Think carefully and then click the <b>Guess Tile</b> you think goes in that slot. The game will let you know
+          if you got a hit or a miss and keep a record of guesses for each <b>Word Tile</b>. A hit (match) will not
+          count against your remaining turns, but a miss will.</p>
+        <p>When you correctly guess the position of one of your scrambled <b>Guess Tiles</b>, the <b>Word Tile</b> where
+          the <b>Guess Tile</b> correctly goes will reveal itself and that <b>Guess Tile</b> will becoming inactive so
+          you don't have to worry about guessing a tile you already figured out.</p>
+        <p>Pick another <b>Word Tile</b> and misses from the last tile will unmark themselves so you can try those
+          unsolved <b>Guess Tiles</b> in other positions. Continue the process of picking a <b>Word Tile</b> and
+          guessing with a <b>Guess Tile</b> until you have either uncovered the entire word or used up all of your
+          misses.</p>
+        <p>
+        <h4>Try to impress your friends by using the least number of guesses possible to solve the puzzle for today and
+          share your score on social media!</h4>
+        </p>
+        <p>Tips #1: Games reset to a new word at midnight.</p>
+        <p>Tips #2: A correct guess (hit) will case the selection box to automatically move to the next unsolved tile on
+          the right.</p>
+        <p>Tips #3: You can either click a <b>Guess Tile</b> or type the matching letter on your keyboard.</p>
+      </div>
+    </div>
+    <!-- PLAYFIELD -->
+    <div class="playfield-container">
+      <div class="playfield">
+        <div class="label">WORD TILES</div>
+        <div id="wordtiles" class="wordtiles"> </div>
+        <div class="label">GUESS TILES</div>
+        <div class="misses-remaining">
+          <span class="misses-remaining-label">Misses Remaining:</span>
+          <i class="far fa-dot-circle" style="color: green;"></i>
+          <i class="far fa-dot-circle" style="color: green;"></i>
+          <i class="far fa-dot-circle" style="color: green;"></i>
+          <i class="far fa-dot-circle" style="color: green;"></i>
+          <i class="far fa-dot-circle" style="color: green;"></i>
+          <i class="far fa-dot-circle" style="color: green;"></i>
+          <i class="far fa-dot-circle" style="color: green;"></i>
+          <i class="far fa-dot-circle" style="color: green;"></i>
+          <i class="far fa-circle" style="color: red"></i>
+          <i class="far fa-circle" style="color: red"></i>
+        </div>
+        <div class="guesstiles" id="guesstiles"></div>
+        <!-- HISTORY SECTION IN DEVELOPMENT -->
+        <!--
           <div class="label">HISTORY</div>
           <div class="historytiles">
             <button class="historytile matched">W</button>
@@ -171,13 +189,18 @@
             <button class="historytile">?</button>
           </div>
           -->
-        </div>
       </div>
-    </main>
-    <div class="footer">©2023 - <a href="mailto:contact@wordhurl.com">David Cahill</a></div>
-    <script src="ui.js" defer></script>
-    <script src="data/words.js"></script>
-    <script src="load.js" defer></script>
-    <script src="script.js" defer></script>
-  </body>
+    </div>
+  </main>
+  <div class="footer">©2023 - <a href="mailto:contact@wordhurl.com">David Cahill</a></div>
+  <script src="ui.js" defer></script>
+  <script src="data/words.js"></script>
+  <script src="load.js" defer></script>
+  <script src="script.js" defer></script>
+  <!-- Event snippet for Website traffic conversion page -->
+  <script>
+    gtag('event', 'conversion', { 'send_to': 'AW-964538103/iuSvCLiZ5okYEPfd9ssD' });
+  </script>
+</body>
+
 </html>
