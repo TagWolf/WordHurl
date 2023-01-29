@@ -31,6 +31,7 @@
 // TODO: Fix UI scaling. Needs to factor in height more than width for scaling purposes.
 // TODO: Display score modal and new game countdown timer on win (see wordle as example)
 // TODO: Admin page to show upcoming words and scrambled tiles for next X days with ability to delete word from rotation
+// TODO: Make how to play a modal window
 //
 // DEVELOPMENT PHASE III
 //
