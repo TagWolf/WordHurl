@@ -37,6 +37,7 @@
 // TODO: Animate history, prev history should slide down, then deal new history row like page load does
 // TODO: Possily scramble words.js (especially scrambled tiles) to make it harder to cheat (or just use a server side database)
 // TODO: Add configuration variables for things like selecting the first tile by default on load, colors, animation types/rates, and other ui/ux things that would be likely to tweek
+// TODO: Day/Night Theme based on time of day. E.g. Day theme is light colors, night theme is dark colors (current)
 //
 // DEVELOPMENT PHASE IIII
 //
