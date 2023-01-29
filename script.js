@@ -5,6 +5,7 @@
 //
 // DEVELOPMENT PHASE I - MUST BE COMPLETED BEFORE 01/30/2023
 //
+
 // TODO: When a wordTile is selected, show stored hits and misses unique to that wordTile only
 // TODO: To increase fun and risk, add a maximum number of guesses per game based on word length. E.g. 3 guesses for 3 letter words, 4 guesses for 4 letter words, etc.
 // TODO: Track remaining misses and update "Misses Remaining" UI and CSS
@@ -16,7 +17,6 @@
 // DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/01/2023
 //
 // TODO: Add modifier variable to add or subtract from maximum number of misses
-// TODO: When a wordTile is matched, the next wordTile to the right should be selected automatically
 // TODO: Allow guessTile selection via keyboard (A-Z). If multiple guessTiles of same letter, choose the first available
 // TODO: Code cleanup, make everything a function where possible.
 // TODO: Ensure good comments throughout code and all functions
@@ -50,6 +50,7 @@
 //
 // COMPLETED DEVELOPMENT ITEMS
 //
+// DONE: When a wordTile is matched, the next wordTile to the right should be selected automatically
 // DONE: When a guessTile hits (matches), it should prevent additional guesses on it
 // DONE: When a guessTile misses, it should become disabled ONLY in the context of the selected wordTile to prevent additional guesses on it while that wordTile is selected
 // DONE: Load word and scrambled tiles from data\words.py
