@@ -3,49 +3,47 @@
 // IMPORTANT Next TODO Items
 // =========================
 //
-// DEVELOPMENT PHASE I - MUST BE COMPLETED BEFORE 02/01/2023
+// DEVELOPMENT PHASE I - MUST BE COMPLETED BEFORE 01/30/2023
 //
 // TODO: When a wordTile is selected, show stored hits and misses unique to that wordTile only
-// TODO: When a wordTile is matched, the next wordTile to the right should be selected automatically
-// TODO: Allow guessTile selection via keyboard (A-Z). If multiple guessTiles of same letter, choose the first available
-// TODO: Allow wordTile selection via arrow keys (and number keys?)
 // TODO: To increase fun and risk, add a maximum number of guesses per game based on word length. E.g. 3 guesses for 3 letter words, 4 guesses for 4 letter words, etc.
-// TODO: Add modifier variable to add or subtract from maximum number of misses
 // TODO: Track remaining misses and update "Misses Remaining" UI and CSS
 // TODO: Check if all guesstiles are correct (Win Condition)
 // TODO: Countdown to next game unlock on score window/modal (see wordle)
-// TODO: Reset / New game / reload button when new game available
+// TODO: Reset / New game / reload button in win modal when new game available (timer at 00:00)
 // TODO: Check if player has already played today and show previously solved game if so (must survive browser close / reload)
-// TODO: Ensure random word selection based on day is working and won't duplicate words picked any time soon
 //
 // DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/01/2023
 //
+// TODO: Add modifier variable to add or subtract from maximum number of misses
+// TODO: When a wordTile is matched, the next wordTile to the right should be selected automatically
+// TODO: Allow guessTile selection via keyboard (A-Z). If multiple guessTiles of same letter, choose the first available
 // TODO: Code cleanup, make everything a function where possible.
 // TODO: Ensure good comments throughout code and all functions
+// TODO: Track score (number of guesses, number of misses, number of hits, number of correct guesses, word length, etc.)
 // TODO: Animate hits and misses (color fade in with increased saturation/alpha and then lower to final color and scale/bounce on hit, shake on miss?)
 // TODO: Animate miss remaining count with scale and fade (or whatever looks good)
 // TODO: Show quick shake / error animation if guesstile is clicked before a wordtile is selected
 // TODO: Don't show selection marquee on guesstiles if a wordtile isn't selected
 // TODO: Animate Win (wave pattern from left to right scaling up and down on completed word tiles)
-// TODO: Fix first tile "deal" animation not showing due to its' automatic selection on load
-// TODO: Rename script files to more meaningful names. E.g. wordhurlLoader.js,
+// TODO: Ensure random word selection based on day is working and won't duplicate words picked any time soon
+// TODO: Rename script files to more meaningful names.
 // TODO: Fix UI scaling. Needs to factor in height more than width for scaling purposes.
-// TODO: Track score (number of guesses, number of misses, number of hits, number of correct guesses, word length, etc.)
 // TODO: Display score modal and new game countdown timer on win (see wordle as example)
 //
 // DEVELOPMENT PHASE III
 //
-// TODO: Create score graph
-// TODO: Display score and graphs window/modal on win
-// TODO: Possily scramble words.js (especially scrambled tiles) to make it harder to cheat (or just use a server side database)
 // TODO: Track history
 // TODO: Animate history, prev history should slide down, then deal new history row like page load does
+// TODO: Possily scramble words.js (especially scrambled tiles) to make it harder to cheat (or just use a server side database)
 // TODO: Add configuration variables for things like selecting the first tile by default on load, colors, animation types/rates, and other ui/ux things that would be likely to tweek
 //
 // DEVELOPMENT PHASE IIII
 //
-// TODO To prevent cheating, change this to server side by having the python script generate one randomWord and scrambleWord at midnight
+// TODO: To prevent cheating, change this to server side by having the python script generate one randomWord and scrambleWord at midnight
 // TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
+// TODO: Create score graph
+// TODO: Display score graph window/modal on win
 // TODO: 508 Compliance (Alt text for misses remaining, etc.)
 // TODO: Better phone browser support and UI scaling
 // TODO: Add support for other languages
@@ -58,6 +56,8 @@
 // DONE: From words.py Pick word and scrambled from array in order based on date
 // DONE: Check guessTile vs selected wordTile as an index of randomWord
 // DONE: Store hits and misses mapped from guessTile to wordTile
+// DONE: Allow wordTile selection via arrow keys (and number keys?)
+// DONE: Fix first tile "deal" animation not showing due to its' automatic selection on load
 
 const GUESS_TILE_CLASS = 'guesstile';
 const GUESS_TILE_MATCHED_CLASS = 'matched';
