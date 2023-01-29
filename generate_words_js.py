@@ -2,6 +2,9 @@ import random
 import re
 from better_profanity import profanity
 
+# This python script is used to generate a list of words and scrambled tiles for use in the game.
+# Currently this script filters out words that are profane, and words that are too short or too long.
+
 words = [ "ABIOGENETICALLY", "ABORIGINALITIES", "ABSORBABILITIES",
   "ABSORBEFACIENTS", "ABSORPTIOMETERS", "ABSTRACTIONISMS",
   "ABSTRACTIONISTS", "ACANTHOCEPHALAN", "ACCEPTABILITIES",
