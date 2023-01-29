@@ -9,9 +9,9 @@
 // TODO: To increase fun and risk, add a maximum number of guesses per game based on word length. E.g. 3 guesses for 3 letter words, 4 guesses for 4 letter words, etc.
 // TODO: Track remaining misses and update "Misses Remaining" UI and CSS
 // TODO: Check if all guesstiles are correct (Win Condition)
-// TODO: Countdown to next game unlock on score window/modal (see wordle)
+// TODO: Countdown to next game (Midnight localtime) unlock on score window/modal (see wordle)
 // TODO: Reset / New game / reload button in win modal when new game available (timer at 00:00)
-// TODO: Check if player has already played today and show previously solved game if so (must survive browser close / reload)
+// TODO: Check if player has already played today and show previously solved game & score if so (must survive browser close / reload)
 //
 // DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/01/2023
 //
