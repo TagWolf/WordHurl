@@ -66,7 +66,8 @@ h1 {
 
 .how-to-play-toggle {
   background-color: transparent;
-  font-size: 6vh;
+  font-size: 5vh;
+  margin-bottom: 0.75rem;
 }
 
 .how-to-play-toggle:hover {
@@ -76,7 +77,7 @@ h1 {
 
 .how-to-play-content {
   font-family: var(--font-family-gill-sans);
-  font-size: 3vh;
+  font-size: 2vh;
   display: contents;
   text-align: left;
   align-items: center;
@@ -94,7 +95,7 @@ h1 {
 
 .label {
   color: #fff;
-  font-size: 5vh;
+  font-size: 4vh;
   font-weight: bold;
   text-align: center;
   margin-top: 0.5rem;
@@ -223,15 +224,25 @@ button {
   width: 100%;
   position: relative;
   bottom: 0px;
-  color: #fff;
-  font-size: 3vh;
+  color: rgb(255, 255, 255);
+  font-size: 2vh;
   font-weight: bold;
   padding: 1em 0;
   text-align: center;
   align-items: center;
 }
 
+.footer-word {
+  color: rgb(157, 199, 255);
+  font-size: 2vh;
+}
+
+.footer-hurl {
+  color: rgb(255, 255, 255);
+  font-size: 1.5vh;
+}
+
 .footer a {
-  color: #fff;
-  text-decoration: none;
+  color: rgb(157, 199, 255);
+  text-decoration-color: rgb(255, 255, 255);
 }
