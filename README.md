@@ -28,8 +28,8 @@ https://wordhurl.com should work in any modern browser on PC, iOS, or Android.
 
 Contributors names and contact info
 
-David Cahill
-Devon Maloney
+- Game Design: David Cahill (david.cahill at gmail.com)
+- Programming: Devon Maloney (dmaloney.calu at gmail.com)
 
 ## Version History
 
