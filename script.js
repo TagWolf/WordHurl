@@ -48,6 +48,7 @@
 // TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
 // TODO: 508 Compliance (Alt text for misses remaining, etc.)
 // TODO: Better phone browser support and UI scaling
+// TODO: Add support for other languages
 //
 // COMPLETED DEVELOPMENT ITEMS
 //
