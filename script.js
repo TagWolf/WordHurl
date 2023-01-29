@@ -31,11 +31,12 @@
 // TODO: Rename script files to more meaningful names. E.g. wordhurlLoader.js,
 // TODO: Fix UI scaling. Needs to factor in height more than width for scaling purposes.
 // TODO: Track score (number of guesses, number of misses, number of hits, number of correct guesses, word length, etc.)
-// TODO: Create score graph
-// TODO: Display score and graphs window/modal on win
+// TODO: Display score modal and new game countdown timer on win (see wordle as example)
 //
 // DEVELOPMENT PHASE III
 //
+// TODO: Create score graph
+// TODO: Display score and graphs window/modal on win
 // TODO: Possily scramble words.js (especially scrambled tiles) to make it harder to cheat (or just use a server side database)
 // TODO: Track history
 // TODO: Animate history, prev history should slide down, then deal new history row like page load does
