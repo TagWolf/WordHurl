@@ -10,7 +10,8 @@
 // TODO: Allow guessTile selection via keyboard (A-Z). If multiple guessTiles of same letter, choose the first available
 // TODO: Allow wordTile selection via arrow keys (and number keys?)
 // TODO: To increase fun and risk, add a maximum number of guesses per game based on word length. E.g. 3 guesses for 3 letter words, 4 guesses for 4 letter words, etc.
-// TODO: Track remaining misses and update UI and CSS
+// TODO: Add modifier variable to add or subtract from maximum number of misses
+// TODO: Track remaining misses and update "Misses Remaining" UI and CSS
 // TODO: Check if all guesstiles are correct (Win Condition)
 // TODO: Countdown to next game unlock on score window/modal (see wordle)
 // TODO: Reset / New game / reload button when new game available
@@ -20,7 +21,7 @@
 // DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/01/2023
 //
 // TODO: Code cleanup, make everything a function where possible.
-// TODO: Animate hits and misses (color fade in and scale/bounce on hit, shake on miss?)
+// TODO: Animate hits and misses (color fade in with increased saturation/alpha and then lower to final color and scale/bounce on hit, shake on miss?)
 // TODO: Animate miss remaining count with scale and fade (or whatever looks good)
 // TODO: Show quick shake / error animation if guesstile is clicked before a wordtile is selected
 // TODO: Don't show selection marquee on guesstiles if a wordtile isn't selected
@@ -36,6 +37,7 @@
 //
 // TODO: Track history
 // TODO: Animate history, prev history should slide down, then deal new history row like page load does
+// TODO: Add configuration variables for things like selecting the first tile by default on load and other ui/ux things that would be likely to tweek
 //
 // DEVELOPMENT PHASE IIII
 //
