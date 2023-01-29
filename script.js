@@ -3,7 +3,7 @@
 // IMPORTANT Next TODO Items
 // =========================
 //
-// DEVELOPMENT PHASE 1
+// DEVELOPMENT PHASE I - MUST BE COMPLETED BEFORE 02/01/2023
 //
 // TODO: When a wordTile is selected, show stored hits and misses unique to that wordTile only
 // TODO: When a wordTile is matched, the next wordTile to the right should be selected automatically
@@ -17,7 +17,7 @@
 // TODO: Check if player has already played today and show previously solved game if so (must survive browser close / reload)
 // TODO: Ensure random word selection based on day is working and won't duplicate words picked any time soon
 //
-// DEVELOPMENT PHASE 2
+// DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/01/2023
 //
 // TODO: Code cleanup, make everything a function where possible.
 // TODO: Animate hits and misses (color fade in and scale/bounce on hit, shake on miss?)
@@ -32,10 +32,13 @@
 // TODO: Create score graph
 // TODO: Display score and graphs window/modal on win
 //
-// DEVELOPMENT PHASE 3
+// DEVELOPMENT PHASE III
 //
 // TODO: Track history
 // TODO: Animate history, prev history should slide down, then deal new history row like page load does
+//
+// DEVELOPMENT PHASE IIII
+//
 // TODO To prevent cheating, change this to server side by having the python script generate one randomWord and scrambleWord at midnight
 // TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
 //
