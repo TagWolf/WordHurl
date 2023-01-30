@@ -15,6 +15,7 @@
 // TODO: Make how to play a separate modal window
 // TODO: Improve how to play icon/link style
 // TODO: Add fiverr logo to page
+// TODO: Replace all alerts with modal windows
 //
 // DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/06/2023
 //
