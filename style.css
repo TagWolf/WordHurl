@@ -149,15 +149,15 @@ h1 {
   color: var(--color-red);
 }
 
+.guesstile.miss {
+  animation: shake 1s;
+  background-color: var(--color-red);
+}
+
 .guesstile.matched {
   background-color: #eee;
   opacity: 0.75;
   color: #999;
-}
-
-.guesstile.miss {
-  background-color: var(--color-red);
-  animation: shake 1s;
 }
 
 .guesstile.disallowed {
@@ -165,7 +165,7 @@ h1 {
   opacity: 0.6;
 }
 
-.guesstile:not(.disallowed):hover {
+.guesstile:not(.matched):not(.miss):hover {
   transform: scale(110%);
   transition: scale 0.2s ease-in-out;
 }

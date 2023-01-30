@@ -141,9 +141,11 @@ function wasLetterAlreadyGuessed(tile, letter) {
 
 function selectGuessTile(tile) {
   const selectedWordTile = getSelectedWordTile();
+
   if (
     !isGameActive ||
     !selectedWordTile ||
+    selectedWordTile.classList.contains(WORD_TILE_MATCHED_CLASS) ||
     tile.classList.contains(GUESS_TILE_MATCHED_CLASS) ||
     tile.classList.contains(GUESS_TILE_MISSED_CLASS)
   ) {
@@ -182,9 +184,7 @@ function selectWordTile(tile) {
 
   tile.classList.add(WORD_TILE_SELECTED_CLASS);
   letters.forEach((el, i) => {
-    if (Number(guessIndex) === i) {
-      el.classList.add(GUESS_TILE_MATCHED_CLASS);
-    } else if (previousGuesses.includes(el.dataset.letter)) {
+    if (previousGuesses.includes(el.dataset.letter)) {
       el.classList.add(GUESS_TILE_MISSED_CLASS);
     }
   });
@@ -198,7 +198,6 @@ function unselectWordTile() {
     const letters = [...getGuessTiles()];
     letters.forEach((el) => {
       el.classList.remove(GUESS_TILE_MISSED_CLASS);
-      el.classList.remove(GUESS_TILE_MATCHED_CLASS);
     });
   }
 }
