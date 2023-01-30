@@ -26,7 +26,8 @@ var gameOverModal = document.getElementById("gameover-modal");
 var howToPlayModal = document.getElementById("howtoplay-modal");
 
 // Get the <span> element that closes the modal
-var modalClose = document.getElementsByClassName("modal-close")[0];
+var gameOverModalClose = document.getElementById("gameover-modal-close");
+var howToPlayModalClose = document.getElementById("howtoplay-modal-close");
 
 // Open Modal Buttons
 // How to Play Button
@@ -40,9 +41,12 @@ gameOverModalButton.onclick = function () {
   gameOverModal.style.display = "block";
 };
 
-// When the user clicks on <span> (x), close modals
-modalClose.onclick = function () {
+// When the user clicks on <span> (x), close the modal
+howToPlayModalClose.onclick = function () {
   howToPlayModal.style.display = "none";
+};
+
+gameOverModalClose.onclick = function () {
   gameOverModal.style.display = "none";
 };
 
