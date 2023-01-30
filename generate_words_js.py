@@ -5,6 +5,7 @@ from better_profanity import profanity
 # This python script is used to generate a list of words and scrambled tiles for use in the game.
 # Currently this script filters out words that are profane, and words that are too short or too long.
 # In the future a script will exist to simply use the sqlite db and pull out the words from there and move them to the current today's word table
+# TODO: Check for equivilent scrambled tiles, and remove them from the list
 
 words = [ "ABIOGENETICALLY", "ABORIGINALITIES", "ABSORBABILITIES",
   "ABSORBEFACIENTS", "ABSORPTIOMETERS", "ABSTRACTIONISMS",
@@ -45681,8 +45682,9 @@ parsed_words = []
 
 word_length_min = 10
 word_length_max = 15
-#word_unique_letters = True
-#word_no_profanity = True
+word_unique_letters = True
+word_no_profanity = True
+#word_no_repeat_scrambled = True
 
 def check_profantity(word):
   return not profanity.contains_profanity(word)
@@ -45695,8 +45697,20 @@ def check_unique_letters(word):
 
 for word in words:
   if len(word) >= word_length_min and len(word) <= word_length_max:
+    if word_unique_letters and word_no_profanity:
       if check_unique_letters(word) and check_profantity(word):
-      #if check_profantity(word):
+        list_word = list(word)
+        random.shuffle(list_word)
+        shuffled_word = ''.join(list_word)
+        parsed_words.append([word, shuffled_word])
+    elif word_unique_letters and not word_no_profanity:
+      if check_unique_letters(word):
+        list_word = list(word)
+        random.shuffle(list_word)
+        shuffled_word = ''.join(list_word)
+        parsed_words.append([word, shuffled_word])
+    elif not word_unique_letters and word_no_profanity:
+      if check_profantity(word):
         list_word = list(word)
         random.shuffle(list_word)
         shuffled_word = ''.join(list_word)

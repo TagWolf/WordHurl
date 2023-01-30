@@ -5,7 +5,6 @@
 //
 // DEVELOPMENT PHASE I - MUST BE COMPLETED BEFORE 01/30/2023
 //
-
 // TODO: Countdown to next game (Midnight localtime) unlock on score window/modal (see wordle)
 // TODO: Check if player has already played today and show previously solved game & score if so (must survive browser close / reload)
 // TODO: Add modifier variable to add or subtract from maximum number of misses
@@ -277,13 +276,17 @@ function incrementMissCounter() {
 function triggerGameLoss() {
   endGame();
   updateGameCookies();
-  alert('you have lost D:');
+  //alert('you have lost D:');
+  // Open the Modal
+  gameoverModal.style.display = "block";
 }
 
 function triggerGameWin() {
   endGame();
   updateGameCookies();
-  alert('you win!');
+  //alert('you win!');
+  // Open the Modal
+  gameoverModal.style.display = "block";
 }
 
 function endGame() {
