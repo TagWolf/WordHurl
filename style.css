@@ -136,6 +136,19 @@ h1 {
   font-size: 3vh;
 }
 
+.fa-dot-circle,
+.fa-circle {
+  margin-left: 5px;
+}
+
+.fa-dot-circle {
+  color: var(--color-green);
+}
+
+.fa-circle {
+  color: var(--color-red);
+}
+
 .guesstile.matched {
   background-color: #eee;
   opacity: 0.75;

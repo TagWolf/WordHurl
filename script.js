@@ -87,33 +87,10 @@ wordTilesContainer.addEventListener("click", (e) => {
 // Guess tile selection
 guessTilesContainer.addEventListener("click", (e) => {
   const classList = e.target.classList;
-  const selectedWordTile = getSelectedWordTile();
-  if (
-    !classList.contains(GUESS_TILE_CLASS) ||
-    classList.contains(GUESS_TILE_MATCHED_CLASS) ||
-    classList.contains(GUESS_TILE_MISSED_CLASS) ||
-    !selectedWordTile
-  ) {
+  if (!classList.contains(GUESS_TILE_CLASS)) {
     return;
   }
-
-  // Check guess hit / miss
-  const { index } = selectedWordTile.dataset;
-  const { index: guessIndex, letter } = e.target.dataset;
-  if (letter === randomWord[index]) {
-    e.target.classList.add(GUESS_TILE_MATCHED_CLASS);
-    selectedWordTile.classList.add(WORD_TILE_MATCHED_CLASS);
-    selectedWordTile.innerText = letter;
-    selectedWordTile.dataset.guessIndex = guessIndex;
-
-    // TODO: check win condition
-
-    // if not (win) 
-    selectNextAvailableTile();
-  } else {
-    addGuessToWordTile(selectedWordTile, letter);
-    e.target.classList.add(GUESS_TILE_MISSED_CLASS);
-  }
+  selectGuessTile(e.target);
 });
 
 // If click is not on a wordtile or guess tile then remove the selected class from all word tiles
@@ -162,6 +139,42 @@ function wasLetterAlreadyGuessed(tile, letter) {
   return tile.dataset.guesses.split(",").includes(letter);
 }
 
+function selectGuessTile(tile) {
+  const selectedWordTile = getSelectedWordTile();
+  if (
+    !isGameActive ||
+    !selectedWordTile ||
+    tile.classList.contains(GUESS_TILE_MATCHED_CLASS) ||
+    tile.classList.contains(GUESS_TILE_MISSED_CLASS)
+  ) {
+    return;
+  }
+
+  // Check guess hit / miss
+  const { index } = selectedWordTile.dataset;
+  const { index: guessIndex, letter } = tile.dataset;
+  if (letter === randomWord[index]) {
+    tile.classList.add(GUESS_TILE_MATCHED_CLASS);
+    selectedWordTile.classList.add(WORD_TILE_MATCHED_CLASS);
+    selectedWordTile.innerText = letter;
+    selectedWordTile.dataset.guessIndex = guessIndex;
+
+    const wordTiles = [...getWordTiles()];
+    if (wordTiles.some((el) => !el.classList.contains(WORD_TILE_MATCHED_CLASS))) {
+      selectNextAvailableTile();
+    } else {
+      triggerGameWin();
+    }
+  } else {
+    addGuessToWordTile(selectedWordTile, letter);
+    tile.classList.add(GUESS_TILE_MISSED_CLASS);
+    incrementMissCounter();
+    if (missCount === maxMisses) {
+      triggerGameLoss();
+    }
+  }
+}
+
 function selectWordTile(tile) {
   const { guessIndex, guesses = '' } = tile.dataset;
   const letters = [...getGuessTiles()];
@@ -198,7 +211,6 @@ function selectNextAvailableTile() {
 
   // check for a word tile still available to select
   if (!allWordTiles.some((tile) => !tile.classList.contains(WORD_TILE_MATCHED_CLASS))) {
-    console.log('no letter available to selectNextAvailableTile');
     return;
   }
 
@@ -224,7 +236,6 @@ function selectPreviousAvailableTile() {
 
   // check for a word tile still available to select
   if (!allWordTiles.some((tile) => !tile.classList.contains(WORD_TILE_MATCHED_CLASS))) {
-    console.log('no letter available to selectPreviousAvailableTile');
     return;
   }
 
@@ -242,6 +253,30 @@ function selectPreviousAvailableTile() {
   }
 }
 
+function incrementMissCounter() {
+  missCount++;
+  missTrackerContainer.children[0].remove();
+  
+  const missIcon = document.createElement('i');
+  missIcon.classList.add('far', 'fa-circle');
+  missTrackerContainer.append(missIcon);
+}
+
+function triggerGameLoss() {
+  isGameActive = false;
+  alert('you have lost D:');
+}
+
+function triggerGameWin() {
+  isGameActive = false;
+  alert('you win!');
+}
+
 function guessLetter(letter) {
-  console.log('guessLetter', letter);
+  if (!randomWord.includes(letter)) { return; }
+
+  const tileToGuess = [...getGuessTiles()].find((el) => el.dataset.letter === letter);
+  if (tileToGuess) {
+    selectGuessTile(tileToGuess);
+  }
 }
