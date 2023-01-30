@@ -64,6 +64,8 @@
 // DONE: Allow wordTile selection via arrow keys (and number keys?)
 // DONE: Fix first tile "deal" animation not showing due to its' automatic selection on load
 
+let isGameActive = true;
+
 const GUESS_TILE_CLASS = 'guesstile';
 const GUESS_TILE_MATCHED_CLASS = 'matched';
 const GUESS_TILE_MISSED_CLASS = 'miss';
@@ -87,33 +89,10 @@ wordTilesContainer.addEventListener("click", (e) => {
 // Guess tile selection
 guessTilesContainer.addEventListener("click", (e) => {
   const classList = e.target.classList;
-  const selectedWordTile = getSelectedWordTile();
-  if (
-    !classList.contains(GUESS_TILE_CLASS) ||
-    classList.contains(GUESS_TILE_MATCHED_CLASS) ||
-    classList.contains(GUESS_TILE_MISSED_CLASS) ||
-    !selectedWordTile
-  ) {
+  if (!classList.contains(GUESS_TILE_CLASS)) {
     return;
   }
-
-  // Check guess hit / miss
-  const { index } = selectedWordTile.dataset;
-  const { index: guessIndex, letter } = e.target.dataset;
-  if (letter === randomWord[index]) {
-    e.target.classList.add(GUESS_TILE_MATCHED_CLASS);
-    selectedWordTile.classList.add(WORD_TILE_MATCHED_CLASS);
-    selectedWordTile.innerText = letter;
-    selectedWordTile.dataset.guessIndex = guessIndex;
-
-    // TODO: check win condition
-
-    // if not (win) 
-    selectNextAvailableTile();
-  } else {
-    addGuessToWordTile(selectedWordTile, letter);
-    e.target.classList.add(GUESS_TILE_MISSED_CLASS);
-  }
+  selectGuessTile(e.target);
 });
 
 // If click is not on a wordtile or guess tile then remove the selected class from all word tiles
@@ -160,6 +139,38 @@ function getSelectedWordTile() {
 
 function wasLetterAlreadyGuessed(tile, letter) {
   return tile.dataset.guesses.split(",").includes(letter);
+}
+
+function selectGuessTile(tile) {
+  const selectedWordTile = getSelectedWordTile();
+  if (
+    !isGameActive ||
+    !selectedWordTile ||
+    tile.classList.contains(GUESS_TILE_MATCHED_CLASS) ||
+    tile.classList.contains(GUESS_TILE_MISSED_CLASS)
+  ) {
+    return;
+  }
+
+  // Check guess hit / miss
+  const { index } = selectedWordTile.dataset;
+  const { index: guessIndex, letter } = tile.dataset;
+  if (letter === randomWord[index]) {
+    tile.classList.add(GUESS_TILE_MATCHED_CLASS);
+    selectedWordTile.classList.add(WORD_TILE_MATCHED_CLASS);
+    selectedWordTile.innerText = letter;
+    selectedWordTile.dataset.guessIndex = guessIndex;
+
+    const wordTiles = [...getWordTiles()];
+    if (wordTiles.some((el) => !el.classList.contains(WORD_TILE_MATCHED_CLASS))) {
+      selectNextAvailableTile();
+    } else {
+      triggerGameWin();
+    }
+  } else {
+    addGuessToWordTile(selectedWordTile, letter);
+    tile.classList.add(GUESS_TILE_MISSED_CLASS);
+  }
 }
 
 function selectWordTile(tile) {
@@ -242,6 +253,16 @@ function selectPreviousAvailableTile() {
   }
 }
 
+function triggerGameWin() {
+  isGameActive = false;
+  alert('you win!');
+}
+
 function guessLetter(letter) {
-  console.log('guessLetter', letter);
+  if (!randomWord.includes(letter)) { return; }
+
+  const tileToGuess = [...getGuessTiles()].find((el) => el.dataset.letter === letter);
+  if (tileToGuess) {
+    selectGuessTile(tileToGuess);
+  }
 }
