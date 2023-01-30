@@ -64,15 +64,21 @@ h1 {
   align-items: center;
 }
 
-.how-to-play-toggle {
+.how-to-play-toggle,
+.fa-refresh {
   background-color: transparent;
+  cursor: pointer;
   font-size: 5vh;
   margin-bottom: 0.75rem;
 }
 
-.how-to-play-toggle:hover {
+.fa-refresh { margin-left: 10px; }
+.fa-refresh.hidden { display: none; }
+
+.how-to-play-toggle:hover,
+.fa-refresh:hover {
   transform: scale(150%);
-  transition: scale 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .how-to-play-content {

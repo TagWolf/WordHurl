@@ -69,6 +69,8 @@ const GUESS_TILE_MATCHED_CLASS = 'matched';
 const GUESS_TILE_MISSED_CLASS = 'miss';
 const GUESS_TILE_READY_CLASS = 'ready';
 
+const REFRESH_BUTTON_CLASS = 'fa-refresh';
+
 const WORD_TILE_CLASS = 'wordtile';
 const WORD_TILE_MATCHED_CLASS = 'matched';
 const WORD_TILE_SELECTED_CLASS = 'selected';
@@ -101,6 +103,12 @@ document.addEventListener("click", (e) => {
     !e.target.classList.contains(GUESS_TILE_CLASS)
   ) {
     unselectWordTile();
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains(REFRESH_BUTTON_CLASS)) {
+    window.location.reload();
   }
 });
 
@@ -266,13 +274,19 @@ function incrementMissCounter() {
 }
 
 function triggerGameLoss() {
-  isGameActive = false;
+  endGame();
   alert('you have lost D:');
 }
 
 function triggerGameWin() {
-  isGameActive = false;
+  endGame();
   alert('you win!');
+}
+
+function endGame() {
+  isGameActive = false;
+  const refreshButton = document.querySelector(`.${REFRESH_BUTTON_CLASS}`);
+  refreshButton?.classList.remove('hidden');
 }
 
 function guessLetter(letter) {
