@@ -64,8 +64,6 @@
 // DONE: Allow wordTile selection via arrow keys (and number keys?)
 // DONE: Fix first tile "deal" animation not showing due to its' automatic selection on load
 
-let isGameActive = true;
-
 const GUESS_TILE_CLASS = 'guesstile';
 const GUESS_TILE_MATCHED_CLASS = 'matched';
 const GUESS_TILE_MISSED_CLASS = 'miss';
@@ -170,6 +168,10 @@ function selectGuessTile(tile) {
   } else {
     addGuessToWordTile(selectedWordTile, letter);
     tile.classList.add(GUESS_TILE_MISSED_CLASS);
+    incrementMissCounter();
+    if (missCount === maxMisses) {
+      triggerGameLoss();
+    }
   }
 }
 
@@ -209,7 +211,6 @@ function selectNextAvailableTile() {
 
   // check for a word tile still available to select
   if (!allWordTiles.some((tile) => !tile.classList.contains(WORD_TILE_MATCHED_CLASS))) {
-    console.log('no letter available to selectNextAvailableTile');
     return;
   }
 
@@ -235,7 +236,6 @@ function selectPreviousAvailableTile() {
 
   // check for a word tile still available to select
   if (!allWordTiles.some((tile) => !tile.classList.contains(WORD_TILE_MATCHED_CLASS))) {
-    console.log('no letter available to selectPreviousAvailableTile');
     return;
   }
 
@@ -251,6 +251,20 @@ function selectPreviousAvailableTile() {
       indexToCheck = allWordTiles.length - 1;
     };
   }
+}
+
+function incrementMissCounter() {
+  missCount++;
+  missTrackerContainer.children[0].remove();
+  
+  const missIcon = document.createElement('i');
+  missIcon.classList.add('far', 'fa-circle');
+  missTrackerContainer.append(missIcon);
+}
+
+function triggerGameLoss() {
+  isGameActive = false;
+  alert('you have lost D:');
 }
 
 function triggerGameWin() {
