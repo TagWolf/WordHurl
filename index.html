@@ -49,13 +49,13 @@
       <!-- RESTART GAME BUTTON -->
       <button id="restart-game-button"><i class="fas fa-refresh hidden"></i></button>
       <button id="howtoplay-modal-button"><i class="fas fa-question-circle"></i></button>
-      <button id="gameover-modal-button">TEST</button>
+      <button id="gameover-modal-button"><i class="fab fa-dev"></i></button>
     </div>
 
     <!-- HOW TO PLAY MODAL -->
     <div id="howtoplay-modal" class="modal">
       <div class="modal-content">
-        <span class="modal-close"><i class="fa fa-window-close"></i></span>
+        <span id="howtoplay-modal-close" class="modal-close"><i class="fa fa-window-close"></i></span>
         <h2>How To Play</h2>
         <p><b>TL;DR: </b>Click to select a <b>Word Tile</b> and then click or type the letter of a <b>Guess Tile</b>
           with the letter you think goes there before you run out of misses!</p>
@@ -63,8 +63,7 @@
         <p>WordHurl is an addictive daily word game that is a little bit of Hangman and Scrabble, with a dash of
           BattleShip sprinkled on top. Your goal is to figure out what today's word is that is hidden in the <b>Word
             Tiles</b> by guessing which <b>Guess Tile</b> goes into a particular <b>Word Tile</b> slot before your
-          <b>Misses Remaining</b> are completely gone.
-        </p>
+          <b>Misses Remaining</b> are completely gone.</p>
         <p>There are three main rows of tiles. The <b>Word Tiles</b> hide the word you are trying to figure out one
           guess at a time, the <b>Guess Tiles</b> contains all the letters of the hidden word above but they are
           scrambled, and <b>History Tiles</b> keep a record of your guesses and whether they are hits or misses.</p>
@@ -79,10 +78,8 @@
           unsolved <b>Guess Tiles</b> in other positions. Continue the process of picking a <b>Word Tile</b> and
           guessing with a <b>Guess Tile</b> until you have either uncovered the entire word or used up all of your
           misses.</p>
-        <p>
         <h4>Try to impress your friends by using the least number of guesses possible to solve the puzzle for today and
           share your score on social media!</h4>
-        </p>
         <p>Tips #1: Games reset to a new word at midnight.</p>
         <p>Tips #2: A correct guess (hit) will case the selection box to automatically move to the next unsolved tile on
           the right.</p>
@@ -93,7 +90,7 @@
     <!-- GAMEOVER MODAL -->
     <div id="gameover-modal" class="modal">
       <div class="modal-content">
-        <span class="modal-close"><i class="fa fa-window-close"></i></span>
+        <span id="gameover-modal-close" class="modal-close"><i class="fa fa-window-close"></i></span>
         <h4>TODAY'S WORD: WORD</h4>
         <table>
           <tr>
