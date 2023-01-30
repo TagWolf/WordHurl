@@ -17,7 +17,10 @@ const randomIndex = (day + month + year) % words.length;
 const randomWord = words.at(randomIndex)[1][0]; // This is the random word
 const scrambledWord = words.at(randomIndex)[2][0]; // This is the scrambled word
 
-let isGameActive = true;
+const GUESS_COOKIE = "guess";
+const TIME_COOKIE = "time";
+
+let isGameActive = false;
 let missCount = 0;
 let maxMisses = randomWord.length;
 
@@ -54,18 +57,46 @@ window.addEventListener("load", function () {
   const wordTiles = document.querySelectorAll(".wordtile");
   const guessTiles = document.querySelectorAll(".guesstile");
 
-  this.setTimeout(() => {
-    wordTiles.forEach((wordTile, i) => {
-      setTimeout(() => {
+  const hasPlayed = getCookie("time") === getISODate();
+  console.log("timeCookie", getCookie("time"));
+
+  if (!hasPlayed) {
+    isGameActive = true;
+    this.setTimeout(() => {
+      wordTiles.forEach((wordTile, i) => {
+        setTimeout(() => {
+          wordTile.classList.remove("hidden");
+        }, 200 * i);
+      });
+    }, 1000);
+    this.setTimeout(() => {
+      guessTiles.forEach((guessTile, i) => {
+        setTimeout(() => {
+          guessTile.classList.remove("hidden");
+        }, 200 * i);
+      });
+    }, 3000);
+  } else {
+    const previousGuess = getCookie("guess");
+    const previousLetters = previousGuess.split("");
+    const didWin = !previousLetters.includes("_");
+    
+    this.setTimeout(() => {
+      wordTiles.forEach((wordTile, i) => {
+        if (previousLetters[i] !== "_") {
+          wordTile.innerHTML = previousLetters[i];
+          wordTile.classList.add("matched")
+        }
         wordTile.classList.remove("hidden");
-      }, 200 * i);
-    });
-  }, 1000);
-  this.setTimeout(() => {
-    guessTiles.forEach((guessTile, i) => {
-      setTimeout(() => {
+      });
+    }, 500);
+    this.setTimeout(() => {
+      guessTiles.forEach((guessTile, i) => {
         guessTile.classList.remove("hidden");
-      }, 200 * i);
-    });
-  }, 3000);
+      });
+    }, 1000);
+
+    endGame();
+    alert(`You've already ${didWin ? 'won' : 'played'}!`);
+  }
 });

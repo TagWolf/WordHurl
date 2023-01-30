@@ -276,11 +276,13 @@ function incrementMissCounter() {
 
 function triggerGameLoss() {
   endGame();
+  updateGameCookies();
   alert('you have lost D:');
 }
 
 function triggerGameWin() {
   endGame();
+  updateGameCookies();
   alert('you win!');
 }
 
@@ -288,6 +290,11 @@ function endGame() {
   isGameActive = false;
   const refreshButton = document.querySelector(`.${REFRESH_BUTTON_CLASS}`);
   refreshButton?.classList.remove('hidden');
+}
+
+function updateGameCookies() {
+  setCookie(GUESS_COOKIE, [ ...getWordTiles()].map((t) => t.innerHTML || '_').join(''));
+  setCookie(TIME_COOKIE, new Date().toISOString().split('T')[0]);
 }
 
 function guessLetter(letter) {
