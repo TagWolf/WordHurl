@@ -7,13 +7,13 @@
 //
 
 // TODO: Countdown to next game (Midnight localtime) unlock on score window/modal (see wordle)
-// TODO: Reset / New game / reload button in win modal when new game available (timer at 00:00)
 // TODO: Check if player has already played today and show previously solved game & score if so (must survive browser close / reload)
 // TODO: Add modifier variable to add or subtract from maximum number of misses
 //
 // DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/01/2023
 //
 // TODO: Display score modal and new game countdown timer on win (see wordle as example)
+// TODO: Move Reset / New game / reload button into win/loss modal
 // TODO: Make how to play a modal window
 // TODO: Admin/Developer page to show upcoming words and scrambled tiles for next X days with ability to delete word from rotation
 // TODO: Code cleanup, make everything a function where possible.
@@ -48,6 +48,7 @@
 //
 // COMPLETED DEVELOPMENT ITEMS
 //
+// DONE: Reset / New game / reload button
 // DONE: Don't show selection marquee on guesstiles if a wordtile isn't selected
 // DONE: Allow guessTile selection via keyboard (A-Z). If multiple guessTiles of same letter, choose the first available
 // DONE: When a wordTile is selected, show stored hits and misses unique to that wordTile only
