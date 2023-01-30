@@ -33,14 +33,17 @@ function deleteCookie(name) {
 // TODO: Create modal for How To Play
 // Get the modal
 var gameoverModal = document.getElementById("gameover-modal");
+
 // Get the <span> element that closes the modal
 var modalClose = document.getElementsByClassName("modal-close")[0];
+
 // Development Test Open Modal Button
 // DELETE THIS LATER
 modalButton = document.getElementById("modal-button");
 modalButton.onclick = function () {
   gameoverModal.style.display = "block";
 };
+
 // When the user clicks on <span> (x), close the modal
 modalClose.onclick = function () {
   gameoverModal.style.display = "none";
