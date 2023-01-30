@@ -3,40 +3,46 @@
 // IMPORTANT Next TODO Items
 // =========================
 //
-// DEVELOPMENT PHASE I - MUST BE COMPLETED BEFORE 01/30/2023
+// DEVELOPMENT PHASE I - MUST BE COMPLETED BEFORE 02/04/2023
 //
-
+// TODO: Add config variables to allow developer to unlimited play / reload for testing
 // TODO: Countdown to next game (Midnight localtime) unlock on score window/modal (see wordle)
 // TODO: Check if player has already played today and show previously solved game & score if so (must survive browser close / reload)
 // TODO: Add modifier variable to add or subtract from maximum number of misses
-//
-// DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/01/2023
-//
+// TODO: Track score (number of guesses, number of misses, number of hits, number of correct guesses, word length, etc.)
 // TODO: Display score modal and new game countdown timer on win (see wordle as example)
 // TODO: Move Reset / New game / reload button into win/loss modal
-// TODO: Make how to play a modal window
+// TODO: Make how to play a separate modal window
+// TODO: Improve how to play icon/link style
+// TODO: Add fiverr logo to page
+//
+// DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/06/2023
+//
 // TODO: Admin/Developer page to show upcoming words and scrambled tiles for next X days with ability to delete word from rotation
 // TODO: Code cleanup, make everything a function where possible.
 // TODO: Ensure good comments throughout code and all functions
-// TODO: Track score (number of guesses, number of misses, number of hits, number of correct guesses, word length, etc.)
 // TODO: Animate hits and misses (color fade in with increased saturation/alpha and then lower to final color and scale/bounce on hit, shake on miss?)
 // TODO: Animate miss remaining count with scale and fade (or whatever looks good)
 // TODO: Show quick shake / error animation if guesstile is clicked before a wordtile is selected
-// TODO: Animate Win (wave pattern from left to right scaling up and down on completed word tiles)
+// TODO: Animate Win (wave pattern from left to right scaling up and down on completed wordtiles)
 // TODO: Ensure random word selection based on day is working and won't duplicate words picked any time soon
-// TODO: Rename script files to more meaningful names.
-// TODO: Fix UI scaling. Needs to factor in height more than width for scaling purposes.
+// TODO: Rename / separate script files to more modular and have meaningful names.
+// TODO: Fix UI scaling across all desktop browsers, including on iOS / Android. Needs to factor in height more than width for scaling purposes.
+// TODO: Polish and cleanup css, html, and layout
+// TODO: Track gameplay history
+// TODO: Animate history, prev history should slide down, then deal new history row like page load does
+// TODO: Add config variables to allow developer to set custom word and scrambled tiles for testing
+// TODO: Add config variables to allow developer to set custom word date for testing
 //
 // DEVELOPMENT PHASE III
 //
-// TODO: Track history
-// TODO: Animate history, prev history should slide down, then deal new history row like page load does
 // TODO: Possily scramble words.js (especially scrambled tiles) to make it harder to cheat (or just use a server side database)
-// TODO: Add configuration variables for things like selecting the first tile by default on load, colors, animation types/rates, and other ui/ux things that would be likely to tweek
 // TODO: Day/Night Theme based on time of day. E.g. Day theme is light colors, night theme is dark colors (current)
 //
 // DEVELOPMENT PHASE IIII
 //
+// TODO: Send stats to server after game over. Score, etc so we can graph how players compare and track conversions (google analytics / adsense?)
+// TODO: Admin portal
 // TODO: To prevent cheating, change this to server side by having the python script generate one randomWord and scrambleWord at midnight
 // TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
 // TODO: Create score graph
@@ -44,7 +50,7 @@
 // TODO: 508 Compliance (Alt text for misses remaining, etc.)
 // TODO: Better phone browser support and UI scaling
 // TODO: Add support for other languages
-// TODO: Admin portal
+// TODO: Add configuration variables for things like selecting the first tile by default on load, colors, animation types/rates, and other ui/ux things that would be likely to tweek
 //
 // COMPLETED DEVELOPMENT ITEMS
 //
@@ -277,13 +283,17 @@ function incrementMissCounter() {
 function triggerGameLoss() {
   endGame();
   updateGameCookies();
-  alert('you have lost D:');
+  //alert('you have lost D:');
+  // Open the Modal
+  gameoverModal.style.display = "block";
 }
 
 function triggerGameWin() {
   endGame();
   updateGameCookies();
-  alert('you win!');
+  //alert('you win!');
+  // Open the Modal
+  gameoverModal.style.display = "block";
 }
 
 function endGame() {
