@@ -1,16 +1,4 @@
-/*
-// Script to hide/show How To Play
-// TODO: Move to a separate UI / nav script file
-var howToPlayToggle = document.querySelector(".how-to-play-toggle");
-var howToPlayContent = document.querySelector(".how-to-play-content");
-howToPlayToggle.addEventListener("click", function (event) {
-  if (howToPlayContent.style.display == "") {
-    howToPlayContent.style.display = "none";
-  } else {
-    howToPlayContent.style.display = "";
-  }
-});
-*/
+// General library and UI functions for WordHurl
 
 //
 function getISODate() {
@@ -45,6 +33,11 @@ var modalClose = document.getElementsByClassName("modal-close")[0];
 howToPlayModalButton = document.getElementById("howtoplay-modal-button");
 howToPlayModalButton.onclick = function () {
   howToPlayModal.style.display = "block";
+};
+
+gameOverModalButton = document.getElementById("gameover-modal-button");
+gameOverModalButton.onclick = function () {
+  gameOverModal.style.display = "block";
 };
 
 // When the user clicks on <span> (x), close modals
