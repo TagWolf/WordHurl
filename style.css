@@ -64,15 +64,21 @@ h1 {
   align-items: center;
 }
 
-.how-to-play-toggle {
+.how-to-play-toggle,
+.fa-refresh {
   background-color: transparent;
+  cursor: pointer;
   font-size: 5vh;
   margin-bottom: 0.75rem;
 }
 
-.how-to-play-toggle:hover {
+.fa-refresh { margin-left: 10px; }
+.fa-refresh.hidden { display: none; }
+
+.how-to-play-toggle:hover,
+.fa-refresh:hover {
   transform: scale(150%);
-  transition: scale 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .how-to-play-content {
@@ -125,12 +131,6 @@ h1 {
   transition: scale 0.2s ease-in-out;
 }
 
-.guesstile {
-  margin-left: 0.2rem;
-  margin-right: 0.2rem;
-  margin-bottom: 1rem;
-}
-
 .misses-remaining {
   margin-bottom: 1rem;
   font-size: 3vh;
@@ -149,15 +149,23 @@ h1 {
   color: var(--color-red);
 }
 
+.guesstile {
+  cursor: default;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.guesstile.miss {
+  animation: shake 1s;
+  background-color: var(--color-red);
+  cursor: not-allowed;
+}
+
 .guesstile.matched {
   background-color: #eee;
   opacity: 0.75;
   color: #999;
-}
-
-.guesstile.miss {
-  background-color: var(--color-red);
-  animation: shake 1s;
 }
 
 .guesstile.disallowed {
@@ -165,7 +173,8 @@ h1 {
   opacity: 0.6;
 }
 
-.guesstile:not(.disallowed):hover {
+.ready .guesstile:not(.matched):not(.miss):hover {
+  cursor: pointer;
   transform: scale(110%);
   transition: scale 0.2s ease-in-out;
 }
@@ -188,8 +197,8 @@ h1 {
   color: #fff;
 }
 
-[class="wordtile"]:hover,
-[class="guesstile"]:hover {
+.wordtile:hover,
+.ready .guesstile:not(.matched):not(.miss):hover {
   border: 0;
   background-image: linear-gradient(90deg, #fff 50%, transparent 50%),
     linear-gradient(90deg, #fff 50%, transparent 50%),
