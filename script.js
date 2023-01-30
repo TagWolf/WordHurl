@@ -10,7 +10,6 @@
 // TODO: Reset / New game / reload button in win modal when new game available (timer at 00:00)
 // TODO: Check if player has already played today and show previously solved game & score if so (must survive browser close / reload)
 // TODO: Add modifier variable to add or subtract from maximum number of misses
-// TODO: Don't show selection marquee on guesstiles if a wordtile isn't selected
 //
 // DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/01/2023
 //
@@ -49,6 +48,7 @@
 //
 // COMPLETED DEVELOPMENT ITEMS
 //
+// DONE: Don't show selection marquee on guesstiles if a wordtile isn't selected
 // DONE: Allow guessTile selection via keyboard (A-Z). If multiple guessTiles of same letter, choose the first available
 // DONE: When a wordTile is selected, show stored hits and misses unique to that wordTile only
 // DONE: To increase fun and risk, add a maximum number of guesses per game based on word length. E.g. 3 guesses for 3 letter words, 4 guesses for 4 letter words, etc.
@@ -67,6 +67,7 @@
 const GUESS_TILE_CLASS = 'guesstile';
 const GUESS_TILE_MATCHED_CLASS = 'matched';
 const GUESS_TILE_MISSED_CLASS = 'miss';
+const GUESS_TILE_READY_CLASS = 'ready';
 
 const WORD_TILE_CLASS = 'wordtile';
 const WORD_TILE_MATCHED_CLASS = 'matched';
@@ -188,10 +189,13 @@ function selectWordTile(tile) {
       el.classList.add(GUESS_TILE_MISSED_CLASS);
     }
   });
+  guessTilesContainer.classList.add(GUESS_TILE_READY_CLASS);
 }
 
 function unselectWordTile() {
   const tile = getSelectedWordTile();
+  guessTilesContainer.classList.remove(GUESS_TILE_READY_CLASS);
+
   if (tile) {
     tile.classList.remove(WORD_TILE_SELECTED_CLASS);
 

@@ -125,12 +125,6 @@ h1 {
   transition: scale 0.2s ease-in-out;
 }
 
-.guesstile {
-  margin-left: 0.2rem;
-  margin-right: 0.2rem;
-  margin-bottom: 1rem;
-}
-
 .misses-remaining {
   margin-bottom: 1rem;
   font-size: 3vh;
@@ -149,9 +143,17 @@ h1 {
   color: var(--color-red);
 }
 
+.guesstile {
+  cursor: default;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+}
+
 .guesstile.miss {
   animation: shake 1s;
   background-color: var(--color-red);
+  cursor: not-allowed;
 }
 
 .guesstile.matched {
@@ -165,7 +167,8 @@ h1 {
   opacity: 0.6;
 }
 
-.guesstile:not(.matched):not(.miss):hover {
+.ready .guesstile:not(.matched):not(.miss):hover {
+  cursor: pointer;
   transform: scale(110%);
   transition: scale 0.2s ease-in-out;
 }
@@ -188,8 +191,8 @@ h1 {
   color: #fff;
 }
 
-[class="wordtile"]:hover,
-[class="guesstile"]:hover {
+.wordtile:hover,
+.ready .guesstile:not(.matched):not(.miss):hover {
   border: 0;
   background-image: linear-gradient(90deg, #fff 50%, transparent 50%),
     linear-gradient(90deg, #fff 50%, transparent 50%),
