@@ -31,6 +31,7 @@
 // TODO: Fix UI scaling. Needs to factor in height more than width for scaling purposes.
 // TODO: Display score modal and new game countdown timer on win (see wordle as example)
 // TODO: Admin page to show upcoming words and scrambled tiles for next X days with ability to delete word from rotation
+// TODO: Make how to play a modal window
 //
 // DEVELOPMENT PHASE III
 //
@@ -65,6 +66,7 @@
 
 const GUESS_TILE_CLASS = 'guesstile';
 const GUESS_TILE_MATCHED_CLASS = 'matched';
+const GUESS_TILE_MISSED_CLASS = 'miss';
 
 const WORD_TILE_CLASS = 'wordtile';
 const WORD_TILE_MATCHED_CLASS = 'matched';
@@ -89,7 +91,7 @@ guessTilesContainer.addEventListener("click", (e) => {
   if (
     !classList.contains(GUESS_TILE_CLASS) ||
     classList.contains(GUESS_TILE_MATCHED_CLASS) ||
-    classList.contains("miss") ||
+    classList.contains(GUESS_TILE_MISSED_CLASS) ||
     !selectedWordTile
   ) {
     return;
@@ -97,12 +99,12 @@ guessTilesContainer.addEventListener("click", (e) => {
 
   // Check guess hit / miss
   const { index } = selectedWordTile.dataset;
-  const { letter } = e.target.dataset;
-  console.log("clicked on:", letter, index);
+  const { index: guessIndex, letter } = e.target.dataset;
   if (letter === randomWord[index]) {
     e.target.classList.add(GUESS_TILE_MATCHED_CLASS);
     selectedWordTile.classList.add(WORD_TILE_MATCHED_CLASS);
     selectedWordTile.innerText = letter;
+    selectedWordTile.dataset.guessIndex = guessIndex;
 
     // TODO: check win condition
 
@@ -110,7 +112,7 @@ guessTilesContainer.addEventListener("click", (e) => {
     selectNextAvailableTile();
   } else {
     addGuessToWordTile(selectedWordTile, letter);
-    e.target.classList.add("miss");
+    e.target.classList.add(GUESS_TILE_MISSED_CLASS);
   }
 });
 
@@ -144,6 +146,10 @@ function addGuessToWordTile(tile, letter) {
   tile.dataset.guesses = !guesses ? letter : `${guesses},${letter}`;
 }
 
+function getGuessTiles() {
+  return guessTilesContainer.querySelectorAll(`.${GUESS_TILE_CLASS}`);
+}
+
 function getWordTiles() {
   return wordTilesContainer.querySelectorAll(`.${WORD_TILE_CLASS}`);
 }
@@ -157,14 +163,16 @@ function wasLetterAlreadyGuessed(tile, letter) {
 }
 
 function selectWordTile(tile) {
-  const { guesses } = tile.dataset;
-  tile.classList.add(WORD_TILE_SELECTED_CLASS);
-  const previousGuesses = guesses.split(",");
-  const letters = guessTilesContainer.querySelectorAll(`.${GUESS_TILE_CLASS}`);
+  const { guessIndex, guesses = '' } = tile.dataset;
+  const letters = [...getGuessTiles()];
+  const previousGuesses = guesses.split(',');
 
-  [].forEach.call(letters, (el) => {
-    if (previousGuesses.includes(el.dataset.letter)) {
-      el.classList.add("disallowed");
+  tile.classList.add(WORD_TILE_SELECTED_CLASS);
+  letters.forEach((el, i) => {
+    if (Number(guessIndex) === i) {
+      el.classList.add(GUESS_TILE_MATCHED_CLASS);
+    } else if (previousGuesses.includes(el.dataset.letter)) {
+      el.classList.add(GUESS_TILE_MISSED_CLASS);
     }
   });
 }
@@ -173,10 +181,12 @@ function unselectWordTile() {
   const tile = getSelectedWordTile();
   if (tile) {
     tile.classList.remove(WORD_TILE_SELECTED_CLASS);
-    const disallowed = guessTilesContainer.querySelectorAll(".disallowed");
-    [].forEach.call(disallowed, (letter) =>
-      letter.classList.remove("disallowed")
-    );
+
+    const letters = [...getGuessTiles()];
+    letters.forEach((el) => {
+      el.classList.remove(GUESS_TILE_MISSED_CLASS);
+      el.classList.remove(GUESS_TILE_MATCHED_CLASS);
+    });
   }
 }
 
