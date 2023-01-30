@@ -54,14 +54,21 @@ h1 {
   font-size: 4vh;
 }
 
-.how-to-play-container {
-  display: block;
-  color: #fff;
-  padding-left: 20vw;
-  padding-right: 20vw;
-  width: 100%;
-  text-align: center;
+.ui-buttons {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ui-buttons button {
+  background-color: transparent;
+  font-size: 5vh;
+}
+
+.ui-buttons button:hover {
+  transform: scale(150%);
+  transition: transform 0.2s ease-in-out;
 }
 
 .how-to-play-toggle,
@@ -75,11 +82,23 @@ h1 {
 .fa-refresh { margin-left: 10px; }
 .fa-refresh.hidden { display: none; }
 
+/*
+.how-to-play-container {
+  display: block;
+  color: #fff;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
 .how-to-play-toggle:hover,
 .fa-refresh:hover {
   transform: scale(150%);
   transition: transform 0.2s ease-in-out;
 }
+
 
 .how-to-play-content {
   font-family: var(--font-family-gill-sans);
@@ -87,6 +106,76 @@ h1 {
   display: contents;
   text-align: left;
   align-items: center;
+}
+*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #222;
+}
+
+.modal-button {
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  align-content: center;
+  display: block;
+  font-size: 1rem;
+  margin-left: 37.5vw;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border: 5px solid #555;
+  width: 25vw;
+}
+
+.modal-content {
+  background-color: #555;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  text-align: center;
+  align-items: center;
+}
+
+.modal-content-button {
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  width: 8rem;
+  height: 3rem;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  align-content: center;
+  display: block;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid #555;
+}
+
+.modal-close {
+  color: #ccc;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .playfield-container {
@@ -269,71 +358,3 @@ button {
   text-decoration-color: rgb(255, 255, 255);
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: #222;
-}
-
-.modal-button {
-  background-color: #fff;
-  color: #000;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  align-content: center;
-  display: block;
-  font-size: 1rem;
-  margin-left: 37.5vw;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  border: 5px solid #555;
-  width: 25vw;
-}
-
-.modal-content {
-  background-color: #555;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 30%;
-  text-align: center;
-  align-items: center;
-}
-
-.modal-content-button {
-  background-color: #fff;
-  color: #000;
-  padding: 10px;
-  width: 8rem;
-  height: 3rem;
-  margin: 10px;
-  text-align: center;
-  text-decoration: none;
-  align-content: center;
-  display: block;
-  font-size: 1rem;
-  cursor: pointer;
-  border: 2px solid #555;
-}
-
-.modal-close {
-  color: #ccc;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.modal-close:hover,
-.modal-close:focus {
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-}

@@ -1,3 +1,4 @@
+/*
 // Script to hide/show How To Play
 // TODO: Move to a separate UI / nav script file
 var howToPlayToggle = document.querySelector(".how-to-play-toggle");
@@ -9,6 +10,7 @@ howToPlayToggle.addEventListener("click", function (event) {
     howToPlayContent.style.display = "";
   }
 });
+*/
 
 //
 function getISODate() {
@@ -50,9 +52,10 @@ modalClose.onclick = function () {
   howToPlayModal.style.display = "none";
   gameOverModal.style.display = "none";
 };
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-  if (event.target == gameOverModal) {
+  if (event.target == gameOverModal || event.target == howToPlayModal) {
     howToPlayModal.style.display = "none";
     gameOverModal.style.display = "none";
   }
