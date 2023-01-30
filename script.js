@@ -38,6 +38,8 @@
 //
 // TODO: Possily scramble words.js (especially scrambled tiles) to make it harder to cheat (or just use a server side database)
 // TODO: Day/Night Theme based on time of day. E.g. Day theme is light colors, night theme is dark colors (current)
+// TODO: Create score graph
+// TODO: Display score graph window/modal on win
 //
 // DEVELOPMENT PHASE IIII
 //
@@ -45,8 +47,6 @@
 // TODO: Admin portal
 // TODO: To prevent cheating, change this to server side by having the python script generate one randomWord and scrambleWord at midnight
 // TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
-// TODO: Create score graph
-// TODO: Display score graph window/modal on win
 // TODO: 508 Compliance (Alt text for misses remaining, etc.)
 // TODO: Better phone browser support and UI scaling
 // TODO: Add support for other languages
