@@ -31,26 +31,29 @@ function deleteCookie(name) {
 
 // MODAL FUNCTIONS
 // TODO: Create modal for How To Play
-// Get the modal
-var gameoverModal = document.getElementById("gameover-modal");
+// Get the modals
+var gameOverModal = document.getElementById("gameover-modal");
+var howToPlayModal = document.getElementById("howtoplay-modal");
 
 // Get the <span> element that closes the modal
 var modalClose = document.getElementsByClassName("modal-close")[0];
 
-// Development Test Open Modal Button
-// DELETE THIS LATER
-modalButton = document.getElementById("modal-button");
-modalButton.onclick = function () {
-  gameoverModal.style.display = "block";
+// Open Modal Buttons
+// How to Play Button
+howToPlayModalButton = document.getElementById("howtoplay-modal-button");
+howToPlayModalButton.onclick = function () {
+  howToPlayModal.style.display = "block";
 };
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on <span> (x), close modals
 modalClose.onclick = function () {
-  gameoverModal.style.display = "none";
+  howToPlayModal.style.display = "none";
+  gameOverModal.style.display = "none";
 };
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-  if (event.target == gameoverModal) {
-    gameoverModal.style.display = "none";
+  if (event.target == gameOverModal) {
+    howToPlayModal.style.display = "none";
+    gameOverModal.style.display = "none";
   }
 };
