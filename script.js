@@ -5,6 +5,7 @@
 //
 // DEVELOPMENT PHASE I - MUST BE COMPLETED BEFORE 02/04/2023
 //
+// TODO: Fix bug where after midnight guesstiles refresh but previous session for wordtiles remains causing an error
 // TODO: Add config variables to allow developer to unlimited play / reload for testing
 // TODO: Countdown to next game (Midnight localtime) unlock on score window/modal (see wordle)
 // TODO: Check if player has already played today and show previously solved game & score if so (must survive browser close / reload)
