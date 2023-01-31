@@ -47,9 +47,10 @@
     <!-- UI BUTTONS -->
     <div class="ui-buttons">
       <!-- RESTART GAME BUTTON -->
-      <button id="restart-game-button"><i class="fas fa-refresh hidden"></i></button>
-      <button id="howtoplay-modal-button"><i class="fas fa-question-circle"></i></button>
-      <button id="gameover-modal-button"><i class="fab fa-dev"></i></button>
+      <button id="restart-game-button" title="Reset Game"><i class="fas fa-refresh hidden"></i></button><!-- TEMP DEV RESET BUTTON -->
+      <button id="howtoplay-modal-button" title="How to Play"><i class="fas fa-question-circle"></i></button>
+      <button id="gameover-modal-button" title="Score"><i class="fab fa-dev"></i></button> <!-- TEMP DEV BUTTON TO BRING UP GAMEOVER MODAL -->
+      <button id="roadmap-modal-button" title="Development Roadmap"><i class="fas fa-road"></i></button>
     </div>
 
     <!-- HOW TO PLAY MODAL -->
@@ -139,6 +140,65 @@
             <td colspan="4">GRAPH HIT/MISS PER TURN</td>
           </tr>
         </table>
+      </div>
+    </div>
+
+    <!-- DEVELOPMENT ROADMAP MODAL -->
+    <div id="roadmap-modal" class="modal">
+      <div class="modal-content">
+        <span id="roadmap-modal-close" class="modal-close"><i class="fa fa-window-close"></i></span>
+        <h2>Development Roadmap</h2>
+        <h3>Current Version: v0.9</h3>
+        <h3>Version 1.0</h3>
+        <ul>
+          <li>Add config variables to allow developer to unlimited play / reload for testing</li>
+          <li>Countdown to next game (Midnight localtime) unlock on score window/modal (see wordle)</li>
+          <li>Check if player has already played today and show previously solved game & score if so (must survive browser close / reload)</li>
+          <li>Add modifier variable to add or subtract from maximum number of misses</li>
+          <li>Track score (number of guesses, number of misses, number of hits, number of correct guesses, word length, etc.)</li>
+          <li>Display score modal and new game countdown timer on win (see wordle as example)</li>
+          <li>Move Reset / New game / reload button into win/loss modal</li>
+          <li>Make how to play a separate modal window</li>
+          <li>Improve how to play icon/link style</li>
+          <li>Add fiverr logo to page</li>
+          <li>Replace all alerts with modal windows</li>
+        </ul>
+        <h3>Version 1.1</h3>
+        <ul>
+          <li>Admin/Developer page to show upcoming words and scrambled tiles for next X days with ability to delete word from rotation</li>
+          <li>Code cleanup, make everything a function where possible.</li>
+          <li>Ensure good comments throughout code and all functions</li>
+          <li>Animate hits and misses (color fade in with increased saturation/alpha and then lower to final color and scale/bounce on hit, shake on miss?)</li>
+          <li>Animate miss remaining count with scale and fade (or whatever looks good)</li>
+          <li>Show quick shake / error animation if guesstile is clicked before a wordtile is selected</li>
+          <li>Animate Win (wave pattern from left to right scaling up and down on completed wordtiles)</li>
+          <li>Ensure random word selection based on day is working and won't duplicate words picked any time soon</li>
+          <li>Rename / separate script files to more modular and have meaningful names.</li>
+          <li>Fix UI scaling across all desktop browsers, including on iOS / Android. Needs to factor in height more than width for scaling purposes.</li>
+          <li>Polish and cleanup css, html, and layout</li>
+          <li>Track gameplay history</li>
+          <li>Animate history, prev history should slide down, then deal new history row like page load does</li>
+          <li>Add config variables to allow developer to set custom word and scrambled tiles for testing</li>
+          <li>Add config variables to allow developer to set custom word date for testing</li>
+        </ul>
+        <h3>Version 1.2</h3>
+        <ul>
+          <li>Possily scramble words.js (especially scrambled tiles) to make it harder to cheat (or just use a server side database)</li>
+          <li>Day/Night Theme based on time of day. E.g. Day theme is light colors, night theme is dark colors (current)</li>
+          <li>Create score graph</li>
+          <li>Display score graph window/modal on win</li>
+        </ul>
+        <h3>Version 2.0</h3>
+        <ul>
+          <li>Send stats to server after game over. Score, etc so we can graph how players compare and track conversions (google analytics / adsense?)</li>
+          <li>Admin portal</li>
+          <li>To prevent cheating, change this to server side by having the python script generate one randomWord and scrambleWord at midnight</li>
+          <li>In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.</li>
+          <li>508 Compliance (Alt text for misses remaining, etc.)</li>
+          <li>Better phone browser support and UI scaling</li>
+          <li>Add support for other languages</li>
+          <li>Add configuration variables for things like selecting the first tile by default on load, colors, animation types/rates, and other ui/ux things that would be likely to tweek</li>
+        </ul>
       </div>
     </div>
 

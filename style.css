@@ -181,6 +181,12 @@ h1 {
   cursor: pointer;
 }
 
+.modal-content ul li {
+  text-align: left;
+  align-items: left;
+  margin-right: 10px;
+}
+
 .playfield-container {
   display: block;
   align-items: center;
