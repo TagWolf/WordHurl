@@ -50,6 +50,7 @@ scrambledWord.split("").forEach((letter, i) => {
   guessTile.innerText = letter;
   guessTilesContainer.append(guessTile);
 
+  // TODO: Move to its' own loop and allow modification of number of misses via config variable.
   const missIcon = document.createElement("i");
   missIcon.classList.add("far", "fa-dot-circle");
   missTrackerContainer.append(missIcon);
