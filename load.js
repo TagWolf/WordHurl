@@ -6,6 +6,9 @@ const wordTilesContainer = document.querySelector("#wordtiles");
 const guessTilesContainer = document.querySelector("#guesstiles");
 const missTrackerContainer = document.querySelector("#miss-tracker");
 
+// Get Game Over Modal
+var gameOverModal = document.getElementById("gameover-modal");
+
 // Select randomWord based on today's date
 // TODO: To prevent cheating, change this to server side by having the python script generate
 //       one randomWord and scrambleWord at midnight
@@ -97,6 +100,7 @@ window.addEventListener("load", function () {
     }, 1000);
 
     endGame();
-    alert(`You've already ${didWin ? 'won' : 'played'}!`);
+    //alert(`You've already ${didWin ? 'won' : 'played'}!`);
+    gameOverModal.style.display = "block";
   }
 });
