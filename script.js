@@ -83,6 +83,9 @@ const WORD_TILE_CLASS = 'wordtile';
 const WORD_TILE_MATCHED_CLASS = 'matched';
 const WORD_TILE_SELECTED_CLASS = 'selected';
 
+// Get Game Over Modal
+var gameOverModal = document.getElementById("gameover-modal");
+
 // Word tile selection
 wordTilesContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains(WORD_TILE_CLASS)) {
@@ -286,7 +289,7 @@ function triggerGameLoss() {
   updateGameCookies();
   //alert('you have lost D:');
   // Open the Modal
-  gameoverModal.style.display = "block";
+  gameOverModal.style.display = "block";
 }
 
 function triggerGameWin() {
@@ -294,7 +297,7 @@ function triggerGameWin() {
   updateGameCookies();
   //alert('you win!');
   // Open the Modal
-  gameoverModal.style.display = "block";
+  gameOverModal.style.display = "block";
 }
 
 function endGame() {
