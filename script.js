@@ -38,20 +38,19 @@
 // DEVELOPMENT PHASE III
 //
 // TODO: Possily scramble words.js (especially scrambled tiles) to make it harder to cheat (or just use a server side database)
-// TODO: Day/Night Theme based on time of day. E.g. Day theme is light colors, night theme is dark colors (current)
-// TODO: Create score graph
+// TODO: Day/Night Theme based on time of day. E.g. Day theme is light colors (white-ish? bg), night theme is dark colors (current)
+// TODO: Create score graph / graphics with hit/miss accuracy, over time, etc. (whatever can be graphed and look cool from current local information.)
 // TODO: Display score graph window/modal on win
 //
 // DEVELOPMENT PHASE IIII
 //
 // TODO: Send stats to server after game over. Score, etc so we can graph how players compare and track conversions (google analytics / adsense?)
-// TODO: Admin portal
-// TODO: To prevent cheating, change this to server side by having the python script generate one randomWord and scrambleWord at midnight
+// TODO: To prevent cheating, change game data to server side on backend by having the python and other server script generate one randomWord and scrambleWord at midnight, receive scores, etc. (See wordhurl.sqlite3)
 // TODO: In the future, enhance WordHurl by using server side sqlite database for handling words, scores, etc.
+// TODO: Admin portal
 // TODO: 508 Compliance (Alt text for misses remaining, etc.)
-// TODO: Better phone browser support and UI scaling
 // TODO: Add support for other languages
-// TODO: Add configuration variables for things like selecting the first tile by default on load, colors, animation types/rates, and other ui/ux things that would be likely to tweek
+// TODO: Add configuration variables for things like selecting the first tile by default on load, animation speed tweaks, tween variables, colors (day/night themes), animation types/rates, and other ui/ux things that would be likely to tweek
 //
 // COMPLETED DEVELOPMENT ITEMS
 //
