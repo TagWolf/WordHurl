@@ -5,6 +5,7 @@
 //
 // DEVELOPMENT PHASE I - MUST BE COMPLETED BEFORE 02/04/2023
 //
+// TODO: Fix bug on loading animation on first tile due to default selection. (Add delay?)
 // TODO: Fix bug where after midnight (on game started before midnight) guesstiles refresh but previous session for wordtiles remains causing an error
 // TODO: Add config variables to allow developer to unlimited play / reload for testing
 // TODO: Countdown to next game (Midnight localtime) unlock on score window/modal (see wordle)
