@@ -8,18 +8,16 @@
 // TODO: Fix bug on loading animation on first tile due to default selection. (Add delay?)
 // TODO: Fix bug where after midnight (on game started before midnight) guesstiles refresh but previous session for wordtiles remains causing an error
 // TODO: Add config variables to allow developer to unlimited play / reload for testing
+// TODO: Track score (number of guesses, number of misses, number of hits, number of correct guesses, word length, etc.)
 // TODO: Add all variables to win/lose score modal
 // TODO: Countdown to next game (Midnight localtime) unlock on score window/modal (see wordle)
-// TODO: Add modifier variable to add or subtract from maximum number of misses
-// TODO: Track score (number of guesses, number of misses, number of hits, number of correct guesses, word length, etc.)
-// TODO: Display score modal and new game countdown timer on win (see wordle as example)
 // TODO: Move Reset / New game / reload button into win/loss modal
-// TODO: Make how to play a separate modal window
-// TODO: Add fiverr logo to page
 //
 // DEVELOPMENT PHASE II - MUST BE COMPLETED BEFORE 02/06/2023
 //
-// TODO: Ensure session progress is saved after each turn to prevent cheating / reset mid-game
+// TODO: Track gameplay history
+// TODO: Ensure session progress is saved after EACH TURN to prevent cheating / reset mid-game
+// TODO: Development variable to disable session tracking/progress saving (for testing)
 // TODO: On win modal, (if value returned) pull definition and pronouciation of word from dictionary api and display it (https://api.dictionaryapi.dev/api/v2/entries/en/<word>).
 // TODO: Admin/Developer page to show upcoming words and scrambled tiles for next X days (OPTIONAL: with ability to delete word from rotation)
 // TODO: Code cleanup, make everything a function where possible.
@@ -27,12 +25,12 @@
 // TODO: Animate hits and misses (color fade in with increased saturation/alpha and then lower to final color and scale/bounce on hit, shake on miss?)
 // TODO: Animate miss remaining count with scale and fade (or whatever looks good)
 // TODO: Show quick shake / error animation if guesstile is clicked before a wordtile is selected
-// TODO: Animate Win (wave pattern from left to right scaling up and down on completed wordtiles)
+// TODO: Animate Win (wave pattern from left to right scaling up and down on completed wordtiles) before showing win/lose modal
+// TODO: Animate loss (shake on remaining wordtiles) and have the unguessed ones flip over / uncover from left to right to show winning word. Then open win/lose modal.
 // TODO: Ensure random word selection based on day is working and won't duplicate words picked any time soon
-// TODO: Rename / separate script files to more modular and have meaningful names.
-// TODO: Fix UI scaling across all desktop browsers, including on iOS / Android. Needs to factor in height more than width for scaling purposes.
+// TODO: Rename / separate / split functions into script files to be more modular and give scripts/libs meaningful names.
+// TODO: Fix UI scaling across all desktop browsers, and popular mobile browsers including on iOS / Android. Needs to factor in height more than width for scaling purposes.
 // TODO: Polish and cleanup css, html, and layout
-// TODO: Track gameplay history
 // TODO: Animate history, prev history should slide down, then deal new history row like page load does
 // TODO: Add config variables to allow developer to set custom word and scrambled tiles for testing
 // TODO: Add config variables to allow developer to set custom word date for testing
@@ -57,6 +55,10 @@
 //
 // COMPLETED DEVELOPMENT ITEMS
 //
+// DONE: Add modifier variable to add or subtract from maximum number of misses
+// DONE: Make how to play a separate modal window
+// DONE: Add fiverr logo to page
+// DONE: Display score modal on game end (see wordle as example)
 // DONE: Check if player has already played today and show previously solved game & score if so (must survive browser close / reload)
 // DONE: Replace all alerts with modal windows
 // DONE: Improve how to play icon/link style
