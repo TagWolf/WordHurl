@@ -8,6 +8,7 @@
 // TODO: Fix bug on loading animation on first tile due to default selection. (Add delay?)
 // TODO: Fix bug where after midnight (on game started before midnight) guesstiles refresh but previous session for wordtiles remains causing an error
 // TODO: Add config variables to allow developer to unlimited play / reload for testing
+// TODO: Add all variables to win/lose score modal
 // TODO: Countdown to next game (Midnight localtime) unlock on score window/modal (see wordle)
 // TODO: Add modifier variable to add or subtract from maximum number of misses
 // TODO: Track score (number of guesses, number of misses, number of hits, number of correct guesses, word length, etc.)
