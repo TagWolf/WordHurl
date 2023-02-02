@@ -49,12 +49,13 @@ scrambledWord.split("").forEach((letter, i) => {
   guessTile.dataset.letter = letter;
   guessTile.innerText = letter;
   guessTilesContainer.append(guessTile);
+});
 
-  // TODO: Move to its' own loop and allow modification of number of misses via config variable.
+for(let i = 0; i < maxMisses; i++) {
   const missIcon = document.createElement("i");
   missIcon.classList.add("far", "fa-dot-circle");
   missTrackerContainer.append(missIcon);
-});
+}
 
 // Animate dealing tiles
 window.addEventListener("load", function () {
