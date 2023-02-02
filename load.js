@@ -25,7 +25,7 @@ const TIME_COOKIE = "time";
 
 let isGameActive = false;
 let missCount = 0;
-let maxMisses = randomWord.length;
+let maxMisses = (randomWord.length / 2) + 1;
 
 console.log("words.length", words.length);
 console.log("randomIndex", randomIndex);
